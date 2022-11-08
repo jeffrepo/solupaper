@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+        <record id="solupaper_view_order_form" model="ir.ui.view">
+            <field name="name">solupaper.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="after">
+                    <field name="po_customer"/>
+                    <field name="po_customer_name"/>
+                    <field name="solupaper_incoterm_id"/>
+                    <field name="puerto"/>
+                    <field name="puerto_destino"/>
+                    <field name="requerido"/>
+                    <field name="forma_envio"/>
+                </field>
+            </field>
+        </record>
+
+</odoo>

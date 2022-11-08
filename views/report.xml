@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report
+            id="solupaper_purchase_order1"
+            string="Orden de compra"
+            model="purchase.order"
+            report_type="qweb-pdf"
+            file="solupaper.reporte_purchase_order1"
+            name="solupaper.reporte_purchase_order1"
+        />
+
+    </data>
+</odoo>
