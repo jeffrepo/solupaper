@@ -8,13 +8,13 @@
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
                 <field name="user_id" position="after">
-                    <field name="po_customer"/>
-                    <field name="po_customer_name"/>
-                    <field name="solupaper_incoterm_id"/>
-                    <field name="puerto"/>
-                    <field name="puerto_destino"/>
-                    <field name="requerido"/>
-                    <field name="forma_envio"/>
+                    <field name="po_customer" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}"/>
+                    <field name="po_customer_name" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}"/>
+                    <field name="solupaper_incoterm_id" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}"/>
+                    <field name="puerto" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}"/>
+                    <field name="puerto_destino" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}"/>
+                    <field name="requerido" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}"/>
+                    <field name="forma_envio" attrs="{'readonly': [('state', 'in', ('sale','done','cancel'))]}"/>
                 </field>
             </field>
         </record>
