@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_account_solupaper">
+       <t t-call="web.html_container">
+           <t t-set="data_report_margin_top" t-value="12"/>
+           <t t-set="data_report_header_spacing" t-value="4"/>
+            <t t-foreach="docs" t-as="o">
+                <div class="article">
+                    <div class="page" style="font-size:16px">
+
+                        <style>
+
+                            div.div_titulos{
+                                margin:auto;
+                                margin-top:0px;
+                                width:100%;
+                                height:30px;
+                            }
+
+                            div.div_izquierdo_titulo{
+                                margin:auto;
+                                margin-top:1px;
+                                width:20%;
+                                height:30px;
+                                float:left;
+                                border-color: black;
+                                border-style: solid;
+                            }
+
+                            div.div_izquierdo_titulo_derecha{
+                                margin:auto;
+                                margin-top:1px;
+                                width:50%;
+                                height:30px;
+                                float:left;
+                                border-color: black;
+                                border-width: 1.5px;
+                                border-style: solid;
+                            }
+
+                            div.div_izquierdo_titulo_izquierda{
+                                margin:auto;
+                                margin-top:1px;
+                                width:100%;
+                                height:30px;
+                                float:left;
+                                border-color: black;
+                                border-width: 1.5px;
+                                border-style: solid;
+                            }
+
+                            div.div_derecho_titulo{
+                                margin:auto;
+                                margin-top:1px;
+                                width:40%;
+                                height:30px;
+                                float:right;
+                                border-bottom-style: dotted;
+                            }
+
+                            div.div_general{
+                                margin:auto;
+                                margin-top:1px;
+                                width:100%;
+                                height:120px;
+                            }
+
+                            div.div_izquierdo{
+                                margin:auto;
+                                margin-top:1px;
+                                width:40%;
+                                height:115px;
+                                float:left;
+                                border-color: black;
+                                border-width: 1px;
+                                border-style: solid;
+                            }
+                            div.div_general_encabezado{
+                                margin:auto;
+                                margin-top:1px;
+                                width:100%;
+                                height:190px;
+                            }
+
+                            div.div_izquierdo_logo{
+                                margin:auto;
+                                margin-top:1px;
+                                width:40%;
+                                height:180px;
+                                float:left;
+                            }
+
+                            div.div_derecho_logo{
+                                margin:auto;
+                                margin-top:1px;
+                                width:40%;
+                                height:180px;
+                                float:right;
+                            }
+
+
+                            div.div_derecho{
+                                margin:auto;
+                                margin-top:1px;
+                                width:40%;
+                                height:190px;
+                                float:right;
+                                border-color: black;
+                                border-width: 1px;
+                                border-style: solid;
+                            }
+                        </style>
+
+                        <div class="div_general_encabezado">
+                            <div class="div_izquierdo_logo">
+                                <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:100%; height:90%; overflow: hidden" alt="Logo"/>
+                                <br/>
+                                <h1 align="center"><strong><u><span t-field="o.company_id.name"/></u></strong><br/></h1>
+                            </div>
+                            <div class="div_derecho_logo">
+                                Invoice: <span t-if="o.name" t-field="o.name"/><br/>
+                                Numero de orden: <span t-if="values['n_orden']" t-esc="values['n_orden']"/><br/>
+                                Date: <span t-if="o.invoice_date" t-field="o.invoice_date"/><br/>
+                                Page: <br/>
+                                Currency: <span t-if="o.currency_id.name" t-field="o.currency_id.name"/><br/>
+                                Intercorm: <span t-if="values['intercorm']" t-esc="values['intercorm']"/><br/>
+                                Puerto: <span t-if="values['puerto']" t-esc="values['puerto']"/><br/>
+                            </div>
+                        </div>
+
+                        <br/>
+
+                        <div class="div_titulos">
+                            <div class="div_izquierdo_titulo">
+                                <div class="div_izquierdo_titulo_izquierda">
+                                    <strong>Importador</strong>
+                                </div>
+                            </div>
+<!--                             <div class="div_derecho_titulo">
+                                <div class="div_izquierdo_titulo_derecha">
+                                    <strong>Enviar / Notificar</strong>
+                                </div>
+                            </div> -->
+
+                        </div>
+
+                        <div class="div_general">
+
+                            <div class="div_izquierdo">
+                                <span t-if="o.partner_id" t-field="o.partner_id.name"/><br/>
+                                <span t-if="o.partner_id.street" t-field="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
+                                <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br/>
+                            </div>
+<!--                             <div class="div_derecho"></div> -->
+
+                        </div>
+
+                        <br/>
+                        <table style="width:100%; border:1; align:center">
+
+                            <tr align="center">
+                                <td>
+                                    <strong>Cliente ID</strong>
+                                </td>
+
+                                <td>
+                                    <strong>Orden del cliente</strong>
+                                </td>
+
+                                <td>
+                                    <strong>Termino de pago</strong>
+                                </td>
+
+                                <td>
+                                    <strong>Fecha de vencimiento</strong>
+                                </td>
+                            </tr>
+
+                            <tr align="center">
+                                <td>
+                                    <strong><span t-if="values['n_orden']" t-esc="values['n_orden']"/></strong>
+                                </td>
+
+                                <td>
+                                    <strong><span t-if="values['orden_cliente']" t-esc="values['orden_cliente']"/></strong>
+                                </td>
+
+                                <td>
+                                    <strong><span t-if="values['plazo_pago']" t-esc="values['plazo_pago']"/></strong>
+                                </td>
+
+                                <td>
+                                    <strong><span t-if="o.invoice_date_due" t-field="o.invoice_date_due"/></strong>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                        <table style="width:100%; border:1; align:center">
+
+                            <tr align="center">
+                                <td>
+                                    <strong>Representante de venta</strong>
+                                </td>
+
+                                <td>
+                                    <strong>Material proveniente de</strong>
+                                </td>
+
+                                <td>
+                                    <strong>Fecha de envío</strong>
+                                </td>
+                            </tr>
+
+                            <tr align="center">
+                                <td><span t-if="values['representate_venta']" t-esc="values['representate_venta']"/></td>
+                                <td><span t-if="o.material_proveniente" t-field="o.material_proveniente"/><br/></td>
+                                <td></td>
+                            </tr>
+
+                        </table>
+                        <br/>
+
+
+                        <table style="width:100%; align:center; border:none; border-bottom: 0px" >
+
+                            <tr align="center" style="border:1;" >
+                                <td style="border:1;">
+                                    <strong>CANTIDAD</strong>
+                                </td>
+
+                                <td style="border:1;">
+                                    <strong>UM</strong>
+                                </td>
+
+                                <td style="border:1;">
+                                    <strong>ROLLOS/PALETAS</strong>
+                                </td>
+
+                                <td style="border:1;">
+                                    <strong>DESCRIPCIÓN</strong>
+                                </td>
+
+                                <td style="border:1;">
+                                    <strong>PRECIO</strong>
+                                </td>
+
+                                <td style="border:1;">
+                                    <strong>PRECIO TOTAL</strong>
+                                </td>
+                            </tr>
+
+
+                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <tr style="border:1;">
+                                    <td style="text-align:center;"><span t-field="line.quantity" t-value="line.quantity"/></td>
+                                    <td style="text-align:center"><span t-field="line.product_uom_id.name"/></td>
+                                    <td><span t-field="line.rollos_paletas"/></td>
+                                    <td style="text-align:left"><span t-field="line.product_id.name"/></td>
+                                    <td style="text-align:right;"><span t-field="line.price_unit"/></td>
+                                    <td style="text-align:right;"><span t-field="line.price_total"/></td>
+                                </tr>
+                            </t>
+
+
+                            <tr >
+                                <td style="border:none">
+                                </td>
+                                <td style="border:1;">
+                                    <strong>Total</strong>
+                                </td>
+                                <td>
+                                </td>
+                                <td style="border:none;">
+                                </td>
+                                <td style="border:1;">
+                                    <strong>Subtotal</strong>
+                                </td>
+                                <td style="text-align:right;">
+                                    <span t-if="o.amount_untaxed_signed" t-field="o.amount_untaxed_signed"/>
+                                </td>
+                            </tr>
+
+                            <tr style="border:none;">
+                                <td style="border:none;">
+                                </td>
+                                <td style="border:none;">
+                                </td>
+                                <td style="border:none;">
+                                </td>
+                                <td style="border:none;">
+                                </td>
+                                <td>
+                                    <strong>Monto total</strong>
+                                </td>
+                                <td style="text-align:right;">
+                                    <span t-if="o.amount_total_signed" t-field="o.amount_total_signed"/>
+                                </td>
+                            </tr>
+
+
+                        </table>
+                        <br/>
+
+                        <table style="width:30%">
+                            <tr>
+                                <td>
+                                    <strong>Total Peso Neto (TM)</strong>
+                                </td>
+                                <td style="text-align:right;"><span t-if="values" t-esc="values['total_peso_neto']"/></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <strong>Total Peso Bruto (TM)</strong>
+                                </td>
+                                <td style="text-align:right;"><span t-if="o.total_peso_bruto" t-field="o.total_peso_bruto"/></td>
+                            </tr>
+                        </table>
+
+                        <br/>
+
+                        <p>
+                            <strong>Observación: </strong> <span t-if="o.narration" t-field="o.narration"/>
+                        </p>
+
+                        <table style="width:75%; border:none;">
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>POR FAVOR HACER PAGO POR TRANSFERENCIA BANCARIA A:</strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.transferencia_a" t-field="o.company_id.transferencia_a"/>
+                                </td>
+                            </tr>
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>BENEFICIARIO:</strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.beneficiario" t-field="o.company_id.beneficiario"/></td>
+                            </tr>
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>NOMBRE DEL BANCO: </strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.nombre_banco" t-field="o.company_id.nombre_banco"/>
+                                </td>
+                            </tr>
+
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>NÚMERO DE CUENTA: </strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.numero_cuenta" t-field="o.company_id.numero_cuenta"/>
+                                </td>
+                            </tr>
+
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>TIPO DE CUENTA: </strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.tipo_cuenta" t-field="o.company_id.tipo_cuenta"/>
+                                </td>
+                            </tr>
+
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>ROUTING NUMBER: </strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.routing_number" t-field="o.company_id.routing_number"/>
+                                </td>
+                            </tr>
+
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>NRO DE SWIFT: </strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.numero_swift" t-field="o.company_id.numero_swift"/>
+                                </td>
+                            </tr>
+
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>DIRECCIÓN DEL BENEFICIARIO: </strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.direccion_beneficiario" t-field="o.company_id.direccion_beneficiario"/>
+                                </td>
+                            </tr>
+
+                            <tr style="border:none;">
+                                <td>
+                                    <strong>TEL: </strong>
+                                </td>
+                                <td>
+                                    <span t-if="o.company_id.telefono" t-field="o.company_id.telefono"/>
+                                </td>
+                            </tr>
+
+
+                        </table>
+
+                        <h1 align="right">
+                            <strong>
+                                <span t-if="o.user_id.name" t-field="o.user_id.name"/>
+                            </strong>
+                        </h1>
+
+
+                        <p>
+                            <strong>Nota: </strong>Reclamos por defectos, errores en el envio o material faltante, seran considerados solo si es hecho durante los primeros 10 dias de haber recibido la mercancia. La responsabilidad de SOLUPAPER, LLC, es limitada a el remplazo en caso de que el material tenga defectos.<br/>
+                        </p>
+
+                        <p>
+                            <font color="red">
+                                El pago debe ser realizado cumpliendo la fecha senalada en esta factura, de no ser asi se aplicara un cargo de 0.05% diario al monto total por motivo de penalidad.
+                            </font>
+                        </p>
+
+
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

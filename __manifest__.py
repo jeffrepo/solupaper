@@ -16,6 +16,12 @@
         'views/sale_views.xml',
         'views/purchase_views.xml',
         'views/report.xml',
+        'views/sale_report.xml',
+        'views/reporte_sale_order.xml',
+        'views/account_report.xml',
+        'views/report_account_solupaper.xml',
+        'views/res_company_view.xml',
+        'views/account_move_view.xml'
     ],
     'assets':{},
     'installable': True,

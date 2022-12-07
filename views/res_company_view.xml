@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <record id="view_company_form_extra_solupaper" model="ir.ui.view">
+        
+        <field name="name">solupaper.res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page['general_info']" position="after">
+                        <page string="Información extra" name="extra_info">
+                            
+                            <group>
+                                <field name="transferencia_a" string="POR FAVOR HACER PAGO POR TRANSFERENCIA BANCARIA A:" />
+                                <field name="beneficiario"/>
+                                <field name="nombre_banco"/>
+                                <field name="numero_cuenta"/>
+                                <field name="tipo_cuenta"/>
+                                <field name="routing_number"/>
+                                <field name="numero_swift"/>
+                                <field name="direccion_beneficiario"/>
+                                <field name="telefono"/>
+                            </group>
+
+                        </page>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

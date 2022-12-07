@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="reporte_purchase_order1">
+    <template id="reporte_sale_order">
        <t t-call="web.html_container">
            <t t-set="data_report_margin_top" t-value="12"/>
            <t t-set="data_report_header_spacing" t-value="4"/>
@@ -28,7 +28,8 @@
                         <div style="height:50px"/>
 
                         <div class="izquierda" style="float:left;width:500px">
-                            <p><strong><u>Número de orden: <span t-field="o.sale_order_id.po_customer"/></u></strong></p>
+                            <p><strong><u>Número de orden: <t t-if="o.po_customer"><span t-field="o.po_customer"/></t>
+                                </u></strong></p>
                         </div>
                         <div class="clearfix"/>
 
@@ -55,14 +56,12 @@
                             <center>
                               <table style="margin: 0px auto;width:100%">
                                   <tr>
-                                      (aqui incoterm de PO CAMPO NUEVO)
-                                      <td style="text-align:right;width:150px">Incoterm:</td> 
-                                      <td style="text-align:left;width:150px"><span t-esc="o.sale_order_id.solupaper_incoterm_id.name"/></td>
+                                      <td style="text-align:right;width:150px">Incoterm:</td>
+                                      <td style="text-align:left;width:150px"><span t-esc="o.solupaper_incoterm_id.name"/></td>
                                   </tr>
                                   <tr>
-                                      (Campo puesto destino(
                                       <td style="text-align:right;width:150px">Puerto:</td>
-                                      <td style="text-align:left;width:150px"><span t-field="o.sale_order_id.puerto"/></td>
+                                      <td style="text-align:left;width:150px"><span t-field="o.puerto"/></td>
                                   </tr>
                                   <tr>
                                       <td style="text-align:right;width:150px">Fecha:</td>
@@ -70,7 +69,7 @@
                                   </tr>
                                   <tr>
                                       <td style="text-align:right;width:150px">Requerido:</td>
-                                      <td style="text-align:left;width:150px"><span t-field="o.sale_order_id.requerido"/></td>
+                                      <td style="text-align:left;width:150px"><span t-field="o.requerido"/></td>
                                   </tr>
                                   <tr>
                                       <td style="text-align:right;width:150px">Moneda:</td>
@@ -78,24 +77,33 @@
                                   </tr>
                                   <tr>
                                       <td style="text-align:right;width:150px">Días de crédito:</td>
-                                      <td style="text-align:left;width:150px"><span t-fields="o.payment_term_id.name"/></td>
+                                      <td style="text-align:left;width:150px"><span t-field="o.payment_term_id.name"/></td>
                                   </tr>
+                                    <tr>
+                                          <td style="text-align:right;width:150px">Orden de compra cliente:</td>
+                                          <td style="text-align:left;width:150px"><span t-field="o.po_customer_name"/></td>
+                                    </tr>
                               </table>
                             </center>
                         </div>
                         <div class="izquierda" style="float:left;">
                             <table style="margin: 0px auto;width:100%">
                                 <tr>
-                                    <td style="text-align:center; width:300px">VENDEDOR</td>
+                                    <td style="text-align:center; width:300px">Cliente</td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align:center;height:100px"><span t-field="o.partner_id.name"/></td>
+                                    <td style="text-align:center;height:100px">
+                                        <span t-field="o.partner_id.name"/><br/>
+                                        <span t-field="o.partner_id.street"/> <span t-field="o.partner_id.street2"/><br/>
+                                        <span t-field="o.partner_id.vat"/><br/>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
                         <div class="clearfix"/>
                         <div style="height:50px"/>
-
+                        <center><h4><strong>Factura Proforma</strong></h4></center>
+                        <br/>
                         <div class="tabla">
                           <table style="margin: 0px auto;width:100%">
                               <tr>
@@ -131,29 +139,30 @@
                         <div style="height:50px"/>
                         <div class="condiciones">
                             <p>
-                                <strong>Conditiones y Terminos:</strong><br/>
-                                Puerto destino: <span t-field="o.sale_order_id.puerto"/><br/>
-                                Cliente: <span t-field="o.sale_order_id.partner_id.name"/><br/>
-                                Orden de compra del cliente: <span t-field="o.sale_order_id.po_customer_name"/><br/>
-                                
-                            </p>
-                            <p style="color:red">
-                                <strong>
-                                    **Por Favor asegurar que el contenedor se carga lo mas cercano a 25 Ton**<br/>
-                                    **El material debe cumplir con las caracteristicas tecnicas **<br/>
-                                    ** Las bobinas deben de venir envueltas en papel plastico para repelar el agua**<br/>
-                                    ** Requerimos certificado de fumigacion de las paletas, si las bobinas van sobre paletas de madera**<br/>
-                                    Es necesario que nos envien fotos antes de cargar el contenedor de la parte de adentro, para tener soporte<br/>
-                                    de que no hay ningun dano en el mismo y evitar cargos en destino por problemas ocacionados a el contenedor
-                                </strong>
-                            </p>
-                        </div>
+                                <strong>Terminos de entrega y condiciones:</strong><br/>
+                                Cargos por demora en puerto son responsabilidad del comprador en caso que incurra alguno. 
+                                <br/>Pagos de impuestos, aranceles y nacionalizacion de la carga no estan incluidos en el precio final <br/>
 
+                                <br/>Aceptacion de esta proforma acuerda que el comprador esta conforme con la descripcion del material (gsm,anchos y cantidades)<br/>
+                                Pago de aranceles he IVA corren por cuenta del importador, costos por demoras ocacionadas en puerto van a cuenta del importador
+                            </p>
+                            
+                            <br/>                            
+                            <p>
+                                <strong>
+                                    Observaciones:
+                                </strong>
+                                <br/><span t-field="o.note"/>
+                            </p>
+                            
+                        </div>
+                        <br/>
                         <div class="break" style="height:50px"/>
 
                         <div id="signature">
                         </div>
                         <div id="signaturename">
+                            f. <span t-field="o.user_id.name"/><br/>
                           Sales Manager
                         </div>
 
