@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem
+        id="menu_solupaper_root"
+        name="Solupaper logistica"
+        web_icon="solupaper,static/description/clip.png"
+        sequence="15"/>
+
+    <!-- Solupaper menu -->
+    <menuitem id="menu_solupaper_logistica"
+        name="Logística"
+        parent="menu_solupaper_root"
+        sequence="1"/>
+
+
+    <record id="action_customer_solupaper_logistica" model="ir.actions.act_window">
+      <field name="name">Solupaper logistica</field>
+      <field name="res_model">solupaper.logistica</field>
+      <field name="view_mode">tree,kanban,form</field>
+      <field name="search_view_id" ref=""/>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+              Empezar a crear algo de logística
+        </p>
+      </field>
+    </record>
+
+
+
+   <menuitem id="menu_customer_solupaper_logistica"
+       name="Solupaper logistica personalizado"
+       parent="menu_solupaper_logistica"
+       sequence="0"
+       action="action_customer_solupaper_logistica"
+       />
+
+   <record id="view_solupaper_logistica_form" model="ir.ui.view">
+       <field name="name">solupaper.logistica.form</field>
+       <field name="model">solupaper.logistica</field>
+       <field name="arch" type="xml">
+           <form string="Logistica algo" js_class="account_move_form">
+             <header>
+             </header>
+
+             <group>
+               <field name="fecha_logistica" string="Fecha"/>
+             </group>
+
+
+
+           </form>
+       </field>
+   </record>
+
+   <!-- <record id="view_solupaper_logistica_filter" model="ir.ui.view">
+       <field name="name">solupaper.logistica.select</field>
+       <field name="model">solupaper.logistica</field>
+       <field name="arch" type="xml">
+          <search string="Search logistica">
+             <filter name="fecha_logistica" string="Fecha" date="fecha_logistica"/>
+          </search>
+       </field>
+   </record> -->
+
+
+
+
+</odoo>
