@@ -14,14 +14,6 @@ class PurchaseOrder(models.Model):
         for purchase in self:
             po_lines = []
             if purchase.sale_order_id:
-                order_id = purchase.sale_order_id.id
-                logging.warning(purchase.sale_order_id)
-                if purchase.order_line:
-                    for line in purchase.order_line:
-                        line.unlink()
-                    logging.warning('CAMBIO')
-                    purchase.sale_order_id = order_id
-                    logging.warning(purchase.sale_order_id)
                 for sale in purchase.sale_order_id:
                     for line in sale.order_line:
                         supplier_taxes = line.product_id.supplier_taxes_id.filtered(lambda t: t.company_id.id == purchase.company_id.id)
@@ -30,7 +22,8 @@ class PurchaseOrder(models.Model):
                             'product_id': line.product_id.id,
                             'name': line.name,
                             'product_qty': line.product_uom_qty,
-                            'price_unit': 0,
+                            'price_unit': 1,
+                            'price_tax': 1,
                             'taxes_id': [(6, 0, taxes.ids)],
                             'date_planned': purchase.date_order,
                             'product_uom': line.product_uom.id
