@@ -25,7 +25,8 @@
         'views/account_move_view.xml',
         'views/solupaper_logistica_view.xml',
         'report/solupaper_logistica_report.xml',
-        'report/ir_actions_report.xml'
+        'report/ir_actions_report.xml',
+        'report/solupaper_circulacion_mercancias_report.xml'
     ],
     'assets':{},
     'installable': True,

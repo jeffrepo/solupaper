@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="solupaper_circulacion_mercancias_report">
+       <t t-call="web.html_container">
+
+         <t t-set="data_report_margin_top" t-value="12"/>
+         <t t-set="data_report_header_spacing" t-value="4"/>
+
+         <t t-foreach="docs" t-as="o">
+           <div class="article">
+               <div class="page">
+
+                 <style>
+
+                   div.div_encabezado{
+                     margin:auto;
+                     margin-top:0px;
+                     width:100%;
+                     <!-- height:px; -->
+                     background:#F9E79F;
+                     border: 1px solid black;
+                   }
+
+                   div.div_caja_almacenaje{
+                     margin:auto;
+                     margin-top:0px;
+                     width:100%;
+                     min-height:542px;
+                     max-height:1500px;
+                     background:#AED6F1;
+                     border: 1px solid black;
+                   }
+
+                   div.caja_mitad_ancho{
+                     margin:auto;
+                     margin-top:0px;
+                     width:50%;
+                     min-height:450px;
+                     max-height:1500px;
+                     border: 1px solid black;
+                   }
+
+                   div.caja_pequena{
+                     margin:auto;
+                     margin-top:0px;
+                     width:100%;
+                     min-height:180px;
+                     max-height:300px;
+                     height:auto;
+                     border: 1px solid black;
+                   }
+
+                 </style>
+
+                 <div class="div_encabezado">
+                   <p style="text-align:center">CERTIFICADO DE CIRCULACIÓN DE MERCANCÍAS</p>
+                 </div>
+
+                 <div class="div_caja_almacenaje">
+
+                   <div class="caja_mitad_ancho" style="float:left">
+                     <div class="caja_pequena">
+                       <p>
+                         <u color="blue">1. Exportador</u> <br/>
+                         POR FAVOR COLOCAR AQUI DATOS DEL FABRICANTE<br/>
+                         INCLUYENDO EL VAT
+                       </p>
+                     </div>
+                     <div class="caja_pequena">
+                       <p>
+                         <u>3. Destinatario</u> <br/>
+                         <p style="text-align:center">
+                           <span t-if="o.proforma_id.partner_id.name" t-esc="o.proforma_id.partner_id.name"/><br/>
+                           <span t-if="o.proforma_id.partner_id.street" t-esc="o.proforma_id.partner_id.street"/>
+                           <span t-if="o.proforma_id.partner_id.city" t-esc="o.proforma_id.partner_id.city"/><br/>
+                           <span t-if="o.proforma_id.partner_id.state_id" t-esc="o.proforma_id.partner_id.country_id.name"/><br/>
+                           <span t-if="o.proforma_id.partner_id.phone" t-esc="o.proforma_id.partner_id.phone"/><br/>
+                         </p>
+                       </p>
+                     </div>
+
+                     <div class="caja_pequena" style="align-items:center; display:flex; justify-content:center">
+                       <p>
+                         <u>6. Información relativa al transporte</u> <br/>
+                       </p>
+
+                       <div style="background:white; width:30%; height:40%">
+                         in White
+                       </div>
+                     </div>
+                   </div>
+
+                   <div class="caja_mitad_ancho" style="float:right">
+
+                     <div class="caja_pequena" style="min-height:35px; max-height:40px">
+                       <p style="text-align:center">
+                         EUR. 1           NO. A
+                       </p>
+                     </div>
+
+                     <div class="caja_pequena" style="min-height:80px; max-height:160px">
+                       <p>
+                         <u>2. Certificado utilizado en los intercambios preferenciales entre.</u> <br/>
+                         <p style="text-align:center">
+                           C.E.E<br/>
+                           y <br/>
+                           <span t-if="o.pais_destino_id" t-esc="o.pais_destino_id.name"/>
+                         </p>
+                       </p>
+                     </div>
+
+                     <div class="caja_pequena" style="min-height:166px; max-height:180px">
+                       <div class="caja_mitad_ancho" style="float:left; min-height:80px; max-height:160px; border: 0px solid black;">
+                         <u>4. País,grupo de países o territorios de donde se consideran originarios los productos.</u>
+                         <br/>
+                         <br/>
+                         <p style="text-align:center"><span t-if="o.pais_origen_id" t-esc="o.pais_origen_id.name"/></p>
+                       </div>
+                       <div class="caja_mitad_ancho" style="float:left; min-height:80px; max-height:160px; border: 0px solid black;">
+                         <u>5. País, grupo de países ó territorio de destino.</u>
+                         <br/>
+                         <br/>
+                         <p style="text-align:center"><br/><span t-if="o.pais_destino_id" t-esc="o.pais_destino_id.name"/></p>
+                       </div>
+                     </div>
+
+                     <div class="caja_pequena">
+                       <u>7. Observaciones</u>
+                       <p>Expedido a Posteriori (esta leyenda se aplicara en caso tal que el EUR1 sea emitido una vez que la  carga haya salido del Puerto)</p>
+                     </div>
+
+                   </div>
+
+                 </div>
+
+                 <div class="div_caja_almacenaje" style="min-height:536px; max-height:700px">
+                   <div class="caja_mitad_ancho" style="width:70%; float:left; min-height:536px; max-height:700px">
+                     <u>8.  Número de orden; marcas, numeración, número y naturaleza de los bultos (1). designación de las mercancías.</u>
+                   </div>
+                   <div class="caja_mitad_ancho" style="width:15%; float:left; min-height:536px; max-height:700px">
+                     <u>9. Masa bruta (kg.) u otra medida (litros, m, etc).</u>
+                   </div>
+                   <div class="caja_mitad_ancho" style="width:15%; float:left; min-height:536px; max-height:700px">
+                     <u>10. Facturas</u><br/>
+                     <p style="text-align:center">(Mención facultativa)</p>
+                   </div>
+                 </div>
+
+                 <div class="div_caja_almacenaje" style="min-height:200px; max-height:700px">
+                   <div class="caja_mitad_ancho" style="width:70%; float:left; min-height:200px; max-height:700px">
+
+                   </div>
+
+                   <div class="caja_mitad_ancho" style="width:15%; float:left; min-height:200px; max-height:700px">
+
+                   </div>
+
+                   <div class="caja_mitad_ancho" style="width:15%; float:left; min-height:200px; max-height:700px">
+
+                   </div>
+
+                 </div>
+
+                 <div class="div_caja_almacenaje" style="min-height:300px; max-height:700px">
+                   <div class="caja_mitad_ancho" style="float:left; min-height:300px">
+                     <u>
+                       11. VISADO DE LA ADUANA.
+                     </u>
+                     <p style="text-align:center">Declaración certificada conforme<br/>
+                     Documento de exportación (2)<br/>
+                     Modelo……………….. No………………..<br/>
+                     del………………………………………………….<br/>
+                     Aduana…………………………………………….<br/>
+                     País o territorio de expedición………………….<br/>
+                     En……….
+                     <div><p style="text-align:center">………………………………<br/>Firma</p><br/></div>
+
+                     </p><br/>
+                   </div>
+
+                   <div class="caja_mitad_ancho" style="float:right; min-height:300px">
+                     <u>12. DECLARACION DEL EXPORTADOR</u>
+                     <p>El que suscribe declara que las mercancías arriba designadas cumplen las condiciones
+                        exigidas para la expedición del presente certificado.
+                     </p>
+                   </div>
+                 </div>
+
+               </div>
+           </div>
+         </t>
+
+       </t>
+    </template>
+</odoo>

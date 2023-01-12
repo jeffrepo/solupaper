@@ -1,3 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+<<<<<<< HEAD
+access_solupaper_logistica,access.solupaper.logistica,solupaper.model_solupaper_logistica,sales_team.group_sale_manager,1,1,1,1
+access_solupaper_logistica_reporte,access.solupaper.reporte.logistica,solupaper.model_report_solupaper_reporte_solupaper_logistica,sales_team.group_sale_manager,1,1,1,1
+=======
 access_solupaper_logistica,access.solupaper.logistica,solupaper.model_solupaper_logistica,sales_team.group_sale_salesman,1,1,1,1
 access_solupaper_logistica_reporte,access.solupaper.reporte.logistica,solupaper.model_report_solupaper_reporte_solupaper_logistica,sales_team.group_sale_salesman,1,1,1,1
+>>>>>>> ea6e214e5b8f826774c4dc0074a70e0614bbfe62

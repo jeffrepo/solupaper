@@ -39,30 +39,34 @@
        <field name="name">solupaper.logistica.form</field>
        <field name="model">solupaper.logistica</field>
        <field name="arch" type="xml">
-           <form string="Logistica algo" js_class="account_move_form">
-             <header>
-             </header>
+           <form string="Logistica algo" class="o_sale_order">
+             <sheet>
 
-             <group>
-               <field name="fecha_logistica" string="Fecha"/>
-             </group>
+               <group>
 
+                 <field name="purchase_order"/>
+                 <field name="proforma_id"/>
+                 <field name="fecha_logistica"/>
+                 <field name="company_id" />
+                 <field name="quantity_containers"/>
+                 <field name="type_container"/>
+                 <field name="days_free" string="Days free"/>
+                 <field name="place_deliver"/>
+                 <field name="freight_supplier_id"/>
+                 <field name="price_quoted" widget="monetary"/>
+                 <field name="movement_type"/>
+               </group>
 
+               <group>
+                 <field name="pais_destino_id"/>
+                 <field name="pais_origen_id"/>
+               </group>
+
+             </sheet>
 
            </form>
        </field>
    </record>
-
-   <!-- <record id="view_solupaper_logistica_filter" model="ir.ui.view">
-       <field name="name">solupaper.logistica.select</field>
-       <field name="model">solupaper.logistica</field>
-       <field name="arch" type="xml">
-          <search string="Search logistica">
-             <filter name="fecha_logistica" string="Fecha" date="fecha_logistica"/>
-          </search>
-       </field>
-   </record> -->
-
 
 
 
