@@ -11,9 +11,8 @@ class SolupaperLogistica(models.Model):
     _description = 'Creado para llevar la logística'
 
     fecha_logistica = fields.Date('Date: ')
-    company_id = fields.Many2one(
-        comodel_name='res.company',
-        required=True, index=True,
+    company_id = fields.Many2one('res.company',
+        required=True,
         default=lambda self: self.env.company)
     proforma_id = fields.Many2one("sale.order", "Proforma:")
     quantity_containers = fields.Integer("Quantity of containers")
@@ -27,23 +26,3 @@ class SolupaperLogistica(models.Model):
     movement_type = fields.Text(string="Movement type")
     pais_destino_id = fields.Many2one('res.country', string="Destination country")
     pais_origen_id = fields.Many2one('res.country', string="Origin country")
-
-
-
-    @api.model
-    def _get_report_values(self, docids, data=None):
-        model = 'solupaper.logistica'
-        docs = self.env[model].browse(docids)
-
-        return {
-            'doc_ids': docids,
-            'doc_model': model,
-            'docs': docs,
-        }
-
-
-class ReportSolupaperLogistica(models.Model):
-    _name = 'report.solupaper.reporte_solupaper_logistica'
-    _inherit = 'solupaper.logistica'
-
-    nombre_reporte = 'solupaper.solupaper_logistica_report'
