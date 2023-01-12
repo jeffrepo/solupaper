@@ -11,6 +11,7 @@
                 </field>
                 <field name="user_id" position="after">
                     <field name="sale_order_id"/>
+                    <field name="puerto_destino"/>
                 </field>
             </field>
         </record>
