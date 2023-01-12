@@ -19,6 +19,7 @@
                      <!-- height:px; -->
                      background:#F9E79F;
                      border: 1px solid black;
+                     <!-- ; -->
                    }
 
                    div.div_caja_almacenaje{
