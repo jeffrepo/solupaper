@@ -84,9 +84,6 @@
                          <u>6. Información relativa al transporte</u> <br/>
                        </p>
 
-                       <div style="background:white; width:30%; height:40%">
-                         in White
-                       </div>
                      </div>
                    </div>
 
@@ -179,10 +176,25 @@
                    </div>
 
                    <div class="caja_mitad_ancho" style="float:right; min-height:300px">
-                     <u>12. DECLARACION DEL EXPORTADOR</u>
+                     <u>12. DECLARACIÓN DEL EXPORTADOR</u>
                      <p>El que suscribe declara que las mercancías arriba designadas cumplen las condiciones
                         exigidas para la expedición del presente certificado.
                      </p>
+                     <div style="display: flex; justify-content: center; width:100%; border-top-color: #CC0000;">
+
+                       <table style="width:90%; border: 0px solid #AED6F1; border-style: none;" ALIGN="center">
+                         <tr style="text-align:center">
+                           <td>En………….</td>
+                           <td>a………….</td>
+                         </tr>
+                       </table>
+
+                     </div>
+
+                     <br/>
+                     <br/>
+                     <p style="text-align:center">Firma</p>
+
                    </div>
                  </div>
 

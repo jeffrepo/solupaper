@@ -62,6 +62,12 @@
                  <field name="pais_origen_id"/>
                </group>
 
+               <group>
+                 <field name="booking_nbr"/>
+                 <field name="notify"/>
+                 <field name="also_notify"/>
+                 <field name="vesse_voy"/>
+               </group>
              </sheet>
 
            </form>

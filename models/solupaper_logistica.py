@@ -26,3 +26,7 @@ class SolupaperLogistica(models.Model):
     movement_type = fields.Text(string="Movement type")
     pais_destino_id = fields.Many2one('res.country', string="Destination country")
     pais_origen_id = fields.Many2one('res.country', string="Origin country")
+    booking_nbr = fields.Char('BOOKING NBR')
+    notify = fields.Text('NOTIFY')
+    also_notify = fields.Text('Also notify')
+    vesse_voy = fields.Char('VESSEL and VOY')
