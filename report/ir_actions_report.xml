@@ -23,4 +23,15 @@
       <field name="binding_type">report</field>
   </record>
 
+  <record id="action_report_solupaper_draft_bl" model="ir.actions.report">
+      <field name="name">Draft BL</field>
+      <field name="model">solupaper.logistica</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">solupaper.solupaper_draft_bl_report</field>
+      <field name="report_file">solupaper.solupaper_draft_bl_report</field>
+      <field name="print_report_name"></field>
+      <field name="binding_model_id" ref="solupaper.model_solupaper_logistica"/>
+      <field name="binding_type">report</field>
+  </record>
+
 </odoo>

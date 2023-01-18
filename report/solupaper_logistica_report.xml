@@ -109,7 +109,7 @@
                      width:100%;
                      min-height:1020px;
                      max-height:2000px;
-                     border: 1px solid black;
+                     <!-- border: 1px solid black; -->
                    }
 
                    div.div_cajita_izquierda{
@@ -140,6 +140,7 @@
                      min-height:50px;
                      max-height:500px;
                      border: 1px solid black;
+                     background:red;
                    }
 
                    div.caja_horizontal{
@@ -196,9 +197,8 @@
 
                      <div class="div_titulo_1"></div>
                      <div class="div_cajita">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">SHIPPER</p>
-                       </div>
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">SHIPPER</p>
+                       <br/>
                        <p style="text-align:center">
 
                          <span t-if="o.company_id.name" t-esc="o.company_id.name"/><br/>
@@ -234,7 +234,7 @@
                        <div class="div_cajita_1">
                          <p style="text-align:center">Type of Container:</p>
                        </div>
-                       <table style="width:100%; min-height:56px; max-height:auto" border="1">
+                       <table style="width:100%; height:65px" border="1">
                          <tr style="text-align:center">
                            <td>
                              20'
@@ -283,16 +283,14 @@
 
                    <div class="caja_horizontal">
                      <div class="div_cajita_izquierda" style="float:left">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Incoterm</p>
-                       </div>
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Incoterm</p>
+                       <br/>
                        <p><span t-if="o.incoterm_id" t-esc="o.incoterm_id.name"/></p>
                      </div>
 
                      <div class="div_cajita_izquierda" style="float:right; background:#F1C40F">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Free days at destination:</p>
-                       </div>
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Free days at destination:</p>
+
                        <br/>
                        <t t-if="o.days_free == 'a'">
                          <p style="text-align:center"><b>7 Days Free</b></p>
@@ -309,9 +307,8 @@
 
                    <div class="caja_horizontal">
                      <div class="div_cajita_izquierda" style="float:left">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Port of Loading:</p>
-                       </div>
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Port of Loading:</p>
+
                        <br/>
                        <p style="text-align:center">
                          <span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_destino"/>
@@ -319,9 +316,8 @@
                      </div>
 
                      <div class="div_cajita_izquierda" style="float:right">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Port of Discharge:</p>
-                       </div>
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Port of Discharge:</p>
+
                        <br/>
                        <p style="text-align:center">
                          <span t-if="o.proforma_id.puerto" t-esc="o.proforma_id.puerto"/>
@@ -330,22 +326,19 @@
                    </div>
 
                    <div class="caja_horizontal">
-                     <div class="div_espacio_total">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Place of  Delivery in Case of  DAP:</p>
-                       </div>
-                       <p style="text-align: justify;">
+                     <!-- <div class="div_espacio_total"> -->
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Place of Delivery in Case of  DAP:</p>
+                       <br/>
+                       <p style="text-align: center;">
                          <span t-if="o.place_deliver" t-esc="o.place_deliver"/>
                        </p>
-                     </div>
+                     <!-- </div> -->
                    </div>
 
-                   <div class="caja_horizontal" style="min-height:156px; max-height:250px">
+                   <div class="caja_horizontal" style="min-height:175px; max-height:200px">
 
-                     <div class="div_cajita_izquierda" style="float:left; height:156px">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Supplier :</p>
-                       </div>
+                     <div class="div_cajita_izquierda" style="float:left">
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Supplier :</p>
                        <br/>
                        <p style="text-align:center">
                          <t t-if="o.purchase_order">
@@ -364,14 +357,13 @@
                      </div>
 
                      <div class="div_cajita_izquierda" style="float:right;">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Supplier Contact:</p>
-                       </div>
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Supplier Contact:</p>
+                       <br/>
                        <p style="text-align:center">
                          <t t-if="o.purchase_order">
                           <span t-if="o.purchase_order.partner_id.name" t-esc="o.purchase_order.partner_id.name"/><br/>
                           <span t-if="o.purchase_order.partner_id.street" t-esc="o.purchase_order.partner_id.street"/>
-                           <span t-if="o.purchase_order.partner_id.city" t-esc="o.purchase_order.partner_id.city"/><br/>
+                          <span t-if="o.purchase_order.partner_id.city" t-esc="o.purchase_order.partner_id.city"/><br/>
                           <span t-if="o.purchase_order.partner_id.state_id" t-esc="o.purchase_order.partner_id.country_id.name"/><br/>
                           <span t-if="o.purchase_order.partner_id.phone" t-esc="o.purchase_order.partner_id.phone"/><br/>
                          </t>
@@ -381,10 +373,8 @@
                    </div>
 
                    <div class="caja_horizontal">
-                     <div class="div_espacio_total_0">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Description of cargo and terms</p>
-                       </div>
+                     <!-- <div class="div_espacio_total_0"> -->
+                       <p style="text-align:center;background:#D7DBDD; border: 1px solid black">Description of cargo and terms</p>
                        <table style="width:100%;border-bottom: 1px solid white;border: 0px solid white;">
                          <t t-if="o.purchase_order">
                            <t t-if="o.purchase_order.order_line">
@@ -401,7 +391,7 @@
                            </t>
                          </t>
                        </table>
-                     </div>
+                     <!-- </div> -->
                    </div>
 
 
@@ -412,12 +402,16 @@
                      </p>
                    </div>
 
-                   <div class="caja_horizontal">
-                     <div class="div_cajita_izquierda" style="width:30%;background:#D7DBDD;float:left">
+                   <p style="page-break-after:always;"></p>
+
+                   <div class="caja_horizontal" style="margin-bottom:3px; min-height:115px">
+                     <div class="div_cajita_izquierda" style="width:30%;background:#D7DBDD;float:left; min-height:115px">
                        <br/><br/>
                        <p style="text-align:center">Client Information:</p>
+                       <br/>
                      </div>
-                     <div class="div_cajita_izquierda" style="width:70%;float:right">
+
+                     <div class="div_cajita_izquierda" style="width:70%;float:right; min-height:115px">
                        <p style="text-align:center">
                          <span t-if="o.proforma_id.partner_id.name" t-esc="o.proforma_id.partner_id.name"/><br/>
                          <span t-if="o.proforma_id.partner_id.street" t-esc="o.proforma_id.partner_id.street"/>
@@ -429,12 +423,12 @@
 
                    </div>
 
-                   <div class="caja_horizontal">
-                     <div class="div_espacio_total_0">
+                   <div style="width:100%;border: 1px solid black; min-height:40px">
+                     <!-- <div class="div_espacio_total_0"> -->
                        <div class="div_cajita_1">
                          <p style="text-align:center">Freigth Forward Information</p>
                        </div>
-                       <table style="width:100%; height:60px">
+                       <table style="width:100%">
                          <tr style="text-align:center; background:#D7DBDD">
                            <td>
                              Company:
@@ -459,19 +453,17 @@
                            </td>
                          </tr>
                        </table>
-                     </div>
+                     <!-- </div> -->
 
 
 
 
                    </div>
 
-                   <div class="caja_horizontal" style="min-height:200px;max-height:250px">
+                   <div class="caja_horizontal">
 
-                     <div class="div_cajita_izquierda" style="float:left;min-height:200px;max-height:250px">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Price Quoted:</p>
-                       </div>
+                     <div class="div_cajita_izquierda" style="float:left">
+                       <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Price Quoted:</p>
                        <br/>
                        <p style="text-align:center">
                          <span t-if="o.price_quoted" t-esc="o.price_quoted"/>
@@ -480,9 +472,7 @@
                      </div>
 
                      <div class="div_cajita_izquierda" style="float:right">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Movement Type:</p>
-                       </div>
+                       <p style="text-align:center;background:#D7DBDD; border: 1px solid black">Movement Type:</p>
                        <br/>
                        <p style="text-align:center">
                          <span t-if="o.movement_type" t-esc="o.movement_type"/>
