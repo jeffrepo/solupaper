@@ -76,6 +76,16 @@
                  </div>
                  <div class="mitad_ancho_e" style="float:right">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">SHIPPER</p>
+                    <p style="text-align:center">
+
+                         <span t-if="o.company_id.name" t-esc="o.company_id.name"/><br/>
+                         <span t-if="o.company_id.street" t-esc="o.company_id.street"/><br/>
+                         <span t-if="o.company_id.city" t-esc="o.company_id.city"/> <span t-if="o.company_id.state_id" t-esc="o.company_id.state_id.name"/><br/>
+                         <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/><br/>
+                         TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
+                         FEI: <span t-if="o.company_id.vat" t-esc="o.company_id.vat"/><br/>
+                         <!-- <span t-if="o.company_id.name" t-esc="o.company_id.street"/><br/> -->
+                       </p>
                  </div>
                </div>
 
@@ -93,7 +103,7 @@
                  <div class="mitad_ancho" style="float:left">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">NOTIFY</p>
                    <br/>
-                   <p style="text-align:center"><span t-esc="o.notify"/></p>
+                   <p style="text-align:center"><span t-esc="o.proforma_id.partner_id.name"/></p>
                  </div>
 
                  <div class="mitad_ancho" style="float:right">
@@ -113,7 +123,7 @@
 
                  <div class="mitad_ancho" style="float:right; min-height:100px">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">PORT OF LOADING</p>
-                   <p style="text-align:center"><span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_destino"/></p>
+                   <p style="text-align:center"><span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_origen"/></p>
                  </div>
 
                  <div class="mitad_ancho" style="float:left; min-height:100px">
@@ -137,7 +147,7 @@
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">DESCRIPTION OF CARGO</p>
                    <br/>
                    <t t-foreach="o.purchase_order.order_line" t-as="line">
-                     <p style="text-align:center"><span t-esc="line.product_qty"/> <span t-esc="line.product_id.name"/></p>
+                     <p style="text-align:center"><span t-esc="line.name"/></p>
                      <br/>
                    </t>
                  </div>

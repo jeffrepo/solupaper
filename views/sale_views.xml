@@ -12,7 +12,6 @@
                     <field name="po_customer_name"/>
                     <field name="solupaper_incoterm_id"/>
                     <field name="puerto"/>
-                    <field name="puerto_destino"/>
                     <field name="requerido"/>
                     <field name="forma_envio"/>
                 </field>

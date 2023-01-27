@@ -185,7 +185,7 @@
                        <div class="divs_mitad_espacio_right" style="background:#F1C40F">
                          <br/>
                          <p style="text-align:center">
-                           <span t-if="o.proforma_id" t-esc="o.proforma_id.po_customer"/>
+                           <span t-esc="o.proforma_id.po_customer"/>
                          </p>
                        </div>
                      </div>
@@ -285,7 +285,7 @@
                      <div class="div_cajita_izquierda" style="float:left">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Incoterm</p>
                        <br/>
-                       <p><span t-if="o.incoterm_id" t-esc="o.incoterm_id.name"/></p>
+                       <p style="text-align:center"><span t-if="o.incoterm_id" t-esc="o.incoterm_id.name"/></p>
                      </div>
 
                      <div class="div_cajita_izquierda" style="float:right; background:#F1C40F">
@@ -311,7 +311,7 @@
 
                        <br/>
                        <p style="text-align:center">
-                         <span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_destino"/>
+                         <span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_origen"/>
                        </p>
                      </div>
 
@@ -380,11 +380,8 @@
                            <t t-if="o.purchase_order.order_line">
                              <t t-foreach="o.purchase_order.order_line" t-as="line">
                                <tr>
-                                 <td style="text-align:right">
-                                   <span t-esc="line.product_qty"/>
-                                 </td>
                                  <td style="text-align:center">
-                                   <span t-esc="line.product_id.name"/>
+                                   <span t-esc="line.name"/>
                                  </td>
                                </tr>
                              </t>
@@ -443,10 +440,10 @@
 
                          <tr style="text-align:center">
                            <td>
-                             <span t-if="o.freight_supplier_id" t-esc="o.freight_supplier_id.name"/>
+                             <span t-if="o.freight_supplier_id.parent_id" t-esc="o.freight_supplier_id.parent_id.name"/>
                            </td>
                            <td>
-                             <span t-if="o.freight_supplier_id" t-esc="o.freight_supplier_id.phone"/>
+                             <span t-if="o.freight_supplier_id" t-esc="o.freight_supplier_id.name"/>
                            </td>
                            <td>
                              <span t-if="o.freight_supplier_id" t-esc="o.freight_supplier_id.email"/>

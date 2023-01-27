@@ -63,7 +63,7 @@
                        <p>
                          <u color="blue">1. Exportador</u> <br/>
                          POR FAVOR COLOCAR AQUI DATOS DEL FABRICANTE<br/>
-                         INCLUYENDO EL VAT
+                         INCLUYENDO EL VAT / PLEASE ADD HERE SUPPLIER INFORMATION INLCUDING VAT NUNMBER 
                        </p>
                      </div>
                      <div class="caja_pequena">
@@ -133,6 +133,19 @@
                  <div class="div_caja_almacenaje" style="min-height:536px; max-height:700px">
                    <div class="caja_mitad_ancho" style="width:70%; float:left; min-height:536px; max-height:700px">
                      <u>8.  Número de orden; marcas, numeración, número y naturaleza de los bultos (1). designación de las mercancías.</u>
+                        <table style="width:100%;border-bottom: 1px solid white;border: 0px solid white;">
+                         <t t-if="o.purchase_order">
+                           <t t-if="o.purchase_order.order_line">
+                             <t t-foreach="o.purchase_order.order_line" t-as="line">
+                               <tr>
+                                 <td style="text-align:center">
+                                   <span t-esc="line.name"/>
+                                 </td>
+                               </tr>
+                             </t>
+                           </t>
+                         </t>
+                       </table>
                    </div>
                    <div class="caja_mitad_ancho" style="width:15%; float:left; min-height:536px; max-height:700px">
                      <u>9. Masa bruta (kg.) u otra medida (litros, m, etc).</u>

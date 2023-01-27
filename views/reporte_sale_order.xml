@@ -163,7 +163,6 @@
                         </div>
                         <div id="signaturename">
                             f. <span t-field="o.user_id.name"/><br/>
-                          Sales Manager
                         </div>
 
                     </div>

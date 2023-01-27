@@ -5,8 +5,8 @@ from odoo import models, fields
 
 class ResCompany(models.Model):
     _inherit = 'res.company'
-    
-    
+
+
     transferencia_a = fields.Char(string='POR FAVOR HACER PAGO POR TRANSFERENCIA BANCARIA A: ')
     beneficiario = fields.Char(string="Beneficiario: ")
     nombre_banco = fields.Char(string="Nombre del banco")

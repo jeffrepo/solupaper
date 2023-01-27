@@ -11,7 +11,8 @@
                 </field>
                 <field name="user_id" position="after">
                     <field name="sale_order_id"/>
-                    <field name="puerto_destino"/>
+                    <field name="puerto_origen"/>
+                    <field name="solupaper_incoterm_id"/>
                 </field>
             </field>
         </record>

@@ -258,7 +258,7 @@
                                     <td style="text-align:center;"><span t-field="line.quantity" t-value="line.quantity"/></td>
                                     <td style="text-align:center"><span t-field="line.product_uom_id.name"/></td>
                                     <td><span t-field="line.rollos_paletas"/></td>
-                                    <td style="text-align:left"><span t-field="line.product_id.name"/></td>
+                                    <td style="text-align:left"><span t-field="line.name"/></td>
                                     <td style="text-align:right;"><span t-field="line.price_unit"/></td>
                                     <td style="text-align:right;"><span t-field="line.price_total"/></td>
                                 </tr>

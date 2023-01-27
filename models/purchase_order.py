@@ -8,7 +8,8 @@ class PurchaseOrder(models.Model):
 
     sale_order_id = fields.Many2one("sale.order","Proforma")
     descuento = fields.Float("Descuento %")
-    puerto_destino = fields.Char(string="Puerto destino: ")
+    puerto_origen = fields.Char("Puerto origen ")
+    solupaper_incoterm_id = fields.Many2one("solupaper.incoterm","Solupaper incoterm")
 
     @api.onchange('sale_order_id')
     def _onchange_sale_order_id(self):

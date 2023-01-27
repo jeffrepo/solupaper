@@ -2,7 +2,7 @@
 <odoo>
 
   <record id="action_report_solupaper_logistica" model="ir.actions.report">
-      <field name="name">Reporte logistica</field>
+      <field name="name">Booking request</field>
       <field name="model">solupaper.logistica</field>
       <field name="report_type">qweb-pdf</field>
       <field name="report_name">solupaper.solupaper_logistica_report</field>
@@ -13,7 +13,7 @@
   </record>
 
   <record id="action_report_solupaper_circulacion_mercancias" model="ir.actions.report">
-      <field name="name">Circulación de mercancias</field>
+      <field name="name">EUR1 draft </field>
       <field name="model">solupaper.logistica</field>
       <field name="report_type">qweb-pdf</field>
       <field name="report_name">solupaper.solupaper_circulacion_mercancias_report</field>

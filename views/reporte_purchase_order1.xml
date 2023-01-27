@@ -55,14 +55,14 @@
                             <center>
                               <table style="margin: 0px auto;width:100%">
                                   <tr>
-                                      (aqui incoterm de PO CAMPO NUEVO)
+
                                       <td style="text-align:right;width:150px">Incoterm:</td> 
-                                      <td style="text-align:left;width:150px"><span t-esc="o.sale_order_id.solupaper_incoterm_id.name"/></td>
+                                      <td style="text-align:left;width:150px"><span t-esc="o.solupaper_incoterm_id.name"/></td>
                                   </tr>
                                   <tr>
-                                      (Campo puesto destino(
+
                                       <td style="text-align:right;width:150px">Puerto:</td>
-                                      <td style="text-align:left;width:150px"><span t-field="o.sale_order_id.puerto"/></td>
+                                      <td style="text-align:left;width:150px"><span t-field="o.puerto_origen"/></td>
                                   </tr>
                                   <tr>
                                       <td style="text-align:right;width:150px">Fecha:</td>
@@ -78,7 +78,7 @@
                                   </tr>
                                   <tr>
                                       <td style="text-align:right;width:150px">Días de crédito:</td>
-                                      <td style="text-align:left;width:150px"><span t-fields="o.payment_term_id.name"/></td>
+                                      <td style="text-align:left;width:150px"><span t-field="o.payment_term_id.name"/></td>
                                   </tr>
                               </table>
                             </center>
@@ -150,11 +150,12 @@
                         </div>
 
                         <div class="break" style="height:50px"/>
-
+                        <span t-field="o.notes"/>
+                         <div class="break" style="height:25px"/>
                         <div id="signature">
                         </div>
                         <div id="signaturename">
-                          Sales Manager
+                          <span t-field="o.user_id.name"/>
                         </div>
 
                     </div>

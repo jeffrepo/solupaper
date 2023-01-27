@@ -52,6 +52,7 @@
                  <field name="type_container"/>
                  <field name="days_free" string="Days free"/>
                  <field name="place_deliver"/>
+                 <field name="incoterm_id"/>  
                  <field name="freight_supplier_id"/>
                  <field name="price_quoted" widget="monetary"/>
                  <field name="movement_type"/>
@@ -64,7 +65,7 @@
 
                <group>
                  <field name="booking_nbr"/>
-                 <field name="notify"/>
+                 
                  <field name="also_notify"/>
                  <field name="vesse_voy"/>
                </group>
