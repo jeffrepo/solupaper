@@ -30,15 +30,24 @@ class ReportAbstractAccountMove(models.AbstractModel):
             logging.warning(linea.sale_line_ids)
             logging.warning(linea.sale_line_ids.name)
             logging.warning(linea.sale_line_ids.order_id)
-            sale_order = linea.sale_line_ids.order_id
+            if linea.sale_line_ids:
+                sale_order = linea.sale_line_ids.order_id
             values['total_peso_neto']+=linea.quantity
 
-        values['n_orden'] = sale_order.po_customer
-        values['puerto'] = sale_order.puerto
-        values['intercorm'] = sale_order.solupaper_incoterm_id
-        values['orden_cliente'] = sale_order.po_customer_name
-        values['plazo_pago'] = sale_order.payment_term_id
-        values['representate_venta'] = sale_order.user_id.name
+        if sale_order:
+            values['n_orden'] = sale_order.po_customer
+            values['puerto'] = sale_order.puerto
+            values['intercorm'] = sale_order.solupaper_incoterm_id.name
+            values['orden_cliente'] = sale_order.po_customer_name
+            values['plazo_pago'] = sale_order.payment_term_id
+            values['representate_venta'] = sale_order.user_id.name
+        else:
+            values['n_orden'] = ""
+            values['puerto'] = ""
+            values['intercorm'] = ""
+            values['orden_cliente'] = ""
+            values['plazo_pago'] = ""
+            values['representate_venta'] = ""
 
 
         logging.warning(values)
