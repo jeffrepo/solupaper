@@ -20,7 +20,7 @@
                             div.div_izquierdo_titulo{
                                 margin:auto;
                                 margin-top:1px;
-                                width:20%;
+                                width:40%;
                                 height:30px;
                                 float:left;
                                 border-color: black;
@@ -135,27 +135,66 @@
                             </div>
                             <br/>
                         </div>
-                        <div style="float:left"><h3 align="center"><strong><u><span t-field="o.company_id.name"/></u></strong></h3></div>
-                        <br/><br/><br/><br/>
+                        <div >
+                          <h3><strong><u><span t-field="o.company_id.name"/></u></strong></h3>
+                          <span t-if="o.company_id.street" t-esc="o.company_id.street"/><br/>
+                          <span t-if="o.company_id.city" t-esc="o.company_id.city"/> <span t-if="o.company_id.state_id" t-esc="o.company_id.state_id.name"/>
+                          <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/><br/>
+                          TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
+                          <!-- FEI: <span t-if="o.company_id.vat" t-esc="o.company_id.vat"/><br/> -->
+                        </div>
+                        <!-- <br/><br/><br/><br/> -->
 
-                        <div class="div_titulos" style="border-top:3px">
-                            <div class="div_izquierdo_titulo">
-                                <div class="div_izquierdo_titulo_izquierda">
-                                    <strong>Importador</strong>
+                        <div style="width:100%;margin:auto; margin-top:0px;">
+
+                          <div style="width:50%;float:left">
+
+                            <div class="div_titulos" style="border-top:3px">
+                                <div class="div_izquierdo_titulo">
+                                    <div class="div_izquierdo_titulo_izquierda">
+                                        <strong>Importador</strong>
+                                    </div>
                                 </div>
+
                             </div>
 
-                        </div>
+                            <div class="div_general">
 
-                        <div class="div_general">
+                                <div class="div_izquierdo" style="width:90%">
+                                    <span t-if="o.partner_id" t-field="o.partner_id.name"/><br/>
+                                    <span t-if="o.partner_id.street" t-field="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
+                                    <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br/>
+                                </div>
 
-                            <div class="div_izquierdo">
-                                <span t-if="o.partner_id" t-field="o.partner_id.name"/><br/>
-                                <span t-if="o.partner_id.street" t-field="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
-                                <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br/>
                             </div>
 
+                          </div>
+
+                          <div style="width:50%;float:right">
+
+                            <div class="div_titulos" style="border-top:3px">
+                                <div class="div_izquierdo_titulo">
+                                    <div class="div_izquierdo_titulo_izquierda">
+                                        <strong>Importador</strong>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="div_general">
+
+                                <div class="div_izquierdo" style="width:90%">
+                                  <span t-if="o.partner_id" t-field="o.partner_id.name"/><br/>
+                                  <span t-if="o.partner_id.street" t-field="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
+                                  <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br/>
+                                </div>
+
+                            </div>
+
+                          </div>
                         </div>
+
+
 
                         <br/>
                         <table style="width:100%; border:1; align:center">
@@ -210,7 +249,7 @@
                                 </td>
 
                                 <td>
-                                    <strong>Fecha de envío</strong>
+                                    <strong>Enviado vía SOLUPAPER</strong>
                                 </td>
                             </tr>
 
@@ -408,11 +447,11 @@
 
                         </table>
 
-                        <h1 align="right">
+                        <h3 align="right">
                             <strong>
                                 <span t-if="o.user_id.name" t-field="o.user_id.name"/>
                             </strong>
-                        </h1>
+                        </h3>
 
 
                         <p>
