@@ -39,7 +39,7 @@ class ReportAbstractAccountMove(models.AbstractModel):
             values['puerto'] = sale_order.puerto
             values['intercorm'] = sale_order.solupaper_incoterm_id.name
             values['orden_cliente'] = sale_order.po_customer_name
-            values['plazo_pago'] = sale_order.payment_term_id
+            values['plazo_pago'] = sale_order.payment_term_id.name
             values['representate_venta'] = sale_order.user_id.name
         else:
             values['n_orden'] = ""
