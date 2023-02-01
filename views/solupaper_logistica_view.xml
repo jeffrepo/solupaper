@@ -34,7 +34,23 @@
        sequence="0"
        action="action_customer_solupaper_logistica"
        />
-
+    
+    <record id="view_solupaper_logistica_tree" model="ir.ui.view">
+        <field name="name">solupaper.logistica.tree</field>
+        <field name="model">solupaper.logistica</field>
+        <field name="arch" type="xml">
+            <tree string="Logistica">
+                <field name="purchase_order" />
+                <field name="proforma_id" />
+                <field name="fecha_logistica" />
+                <field name="company_id" />
+                <field name="quantity_containers" />
+                <field name="type_container" />
+                <field name="days_free" />
+            </tree>
+        </field>
+    </record>
+    
    <record id="view_solupaper_logistica_form" model="ir.ui.view">
        <field name="name">solupaper.logistica.form</field>
        <field name="model">solupaper.logistica</field>
