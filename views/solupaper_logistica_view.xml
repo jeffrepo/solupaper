@@ -13,7 +13,6 @@
         parent="menu_solupaper_root"
         sequence="1"/>
 
-
     <record id="action_customer_solupaper_logistica" model="ir.actions.act_window">
       <field name="name">Solupaper logistica</field>
       <field name="res_model">solupaper.logistica</field>
