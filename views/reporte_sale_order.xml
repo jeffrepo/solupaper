@@ -13,6 +13,7 @@
                                 <p>
                                     <strong><u><span t-field="o.company_id.name"/></u></strong><br/>
                                     <span t-field="o.company_id.street"/>, <span t-field="o.company_id.street2"/><br/>
+                                    <span t-field="o.company_id.city"/>, <span t-field="o.company_id.state_id.name"/>, <span t-field="o.company_id.country_id.name"/><br/>
                                     Teléfono: <span t-field="o.company_id.phone"/><br/>
                                     <span t-field="o.company_id.vat"/>
 
