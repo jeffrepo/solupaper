@@ -21,11 +21,11 @@
                         </div>
 
                         <div class="izquierda" style="float:left;">
-                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:250px" alt="Logo"/>
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:175px" alt="Logo"/>
                         </div>
                         <div class="clearfix"/>
 
-                        <div style="height:50px"/>
+                        <div style="height:25px"/>
 
                         <div class="izquierda" style="float:left;width:500px">
                             <p><strong><u>Número de orden: <t t-if="o.po_customer"><span t-field="o.po_customer"/></t>
@@ -101,7 +101,7 @@
                             </table>
                         </div>
                         <div class="clearfix"/>
-                        <div style="height:50px"/>
+                        <div style="height:25px"/>
                         <center><h4><strong>Factura Proforma</strong></h4></center>
                         <br/>
                         <div class="tabla">
@@ -136,28 +136,28 @@
                           </table>
                         </div>
 
-                        <div style="height:50px"/>
+                        <div style="height:25px"/>
                         <div class="condiciones">
                             <p>
                                 <strong>Terminos de entrega y condiciones:</strong><br/>
-                                Cargos por demora en puerto son responsabilidad del comprador en caso que incurra alguno. 
+                                Cargos por demora en puerto son responsabilidad del comprador en caso que incurra alguno.
                                 <br/>Pagos de impuestos, aranceles y nacionalizacion de la carga no estan incluidos en el precio final <br/>
 
                                 <br/>Aceptacion de esta proforma acuerda que el comprador esta conforme con la descripcion del material (gsm,anchos y cantidades)<br/>
                                 Pago de aranceles he IVA corren por cuenta del importador, costos por demoras ocacionadas en puerto van a cuenta del importador
                             </p>
-                            
-                            <br/>                            
+
+                            <br/>
                             <p>
                                 <strong>
                                     Observaciones:
                                 </strong>
                                 <br/><span t-field="o.note"/>
                             </p>
-                            
+
                         </div>
                         <br/>
-                        <div class="break" style="height:50px"/>
+                        <div class="break" style="height:25px"/>
 
                         <div id="signature">
                         </div>
