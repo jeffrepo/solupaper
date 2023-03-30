@@ -119,35 +119,28 @@
                             }
                         </style>
 
-                        <div class="div_general_encabezado">
-                            <div class="div_izquierdo_logo">
-                                <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:100%; height:90%; overflow: hidden" alt="Logo"/>
-                                <br/>
-                            </div>
-                            <div class="div_derecho_logo">
-                                Invoice: <span t-if="o.name" t-field="o.name"/><br/>
-                                Numero de orden: <span t-if="values['n_orden']" t-esc="values['n_orden']"/><br/>
-                                Date: <span t-if="o.invoice_date" t-field="o.invoice_date"/><br/>
-                                Page: <br/>
-                                Currency: <span t-if="o.currency_id.name" t-field="o.currency_id.name"/><br/>
-                                Intercorm: <span t-if="values['intercorm']" t-esc="values['intercorm']"/><br/>
-                                Puerto: <span t-if="values['puerto']" t-esc="values['puerto']"/><br/>
-                            </div>
-                            <br/>
+                        <div style="height:auto; width:100%; padding-bottom:5px; display:flex; overflow:auto">
+                          <div style="float:left; width:50%">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:175px; overflow: hidden" alt="Logo"/>
+                          </div>
+                          <div style="float:right; width:50%; height:auto">
+                            Invoice: <span t-if="o.name" t-field="o.name"/>| Currency: <span t-if="o.currency_id.name" t-field="o.currency_id.name"/><br/>
+                            Numero de orden: <span t-if="values['n_orden']" t-esc="values['n_orden']"/>| Intercorm: <span t-if="values['intercorm']" t-esc="values['intercorm']"/><br/>
+                            Date: <span t-if="o.invoice_date" t-field="o.invoice_date"/>| Puerto: <span t-if="values['puerto']" t-esc="values['puerto']"/><br/>
+                            Page: <br/>
+                          </div>
                         </div>
-                        <div >
-                          <h3><strong><u><span t-field="o.company_id.name"/></u></strong></h3>
+                        <br/>
+                        <div>
+                          <h4><strong><u><span t-field="o.company_id.name"/></u></strong></h4>
                           <span t-if="o.company_id.street" t-esc="o.company_id.street"/><br/>
                           <span t-if="o.company_id.city" t-esc="o.company_id.city"/> <span t-if="o.company_id.state_id" t-esc="o.company_id.state_id.name"/>
-                          <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/><br/>
-                          TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
-                          <!-- FEI: <span t-if="o.company_id.vat" t-esc="o.company_id.vat"/><br/> -->
+                          <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/> TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/>
                         </div>
-                        <!-- <br/><br/><br/><br/> -->
+                        <br/>
+                        <div style="width:100%;height:auto;display:flex; overflow:auto">
 
-                        <div style="width:100%;margin:auto; margin-top:0px;">
-
-                          <div style="width:50%;float:left">
+                          <div style="width:50%;float:left;height:auto; ">
 
                             <div class="div_titulos" style="border-top:3px">
                                 <div class="div_izquierdo_titulo">
@@ -158,19 +151,19 @@
 
                             </div>
 
-                            <div class="div_general">
+                            <div class="div_general" style="height:auto">
 
-                                <div class="div_izquierdo" style="width:90%">
-                                    <span t-if="o.partner_id" t-field="o.partner_id.name"/><br/>
+                                <div class="div_izquierdo" style="width:90%;height:auto">
+                                    <span t-if="o.partner_id" t-field="o.partner_id.name"><br/></span>
                                     <span t-if="o.partner_id.street" t-field="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
-                                    <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br/>
+                                    <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/>
                                 </div>
 
                             </div>
 
                           </div>
 
-                          <div style="width:50%;float:right">
+                          <div style="width:50%;float:right; height:auto;">
 
                             <div class="div_titulos" style="border-top:3px">
                                 <div class="div_izquierdo_titulo">
@@ -181,21 +174,18 @@
 
                             </div>
 
-                            <div class="div_general">
+                            <div class="div_general" style="height:auto">
 
-                                <div class="div_izquierdo" style="width:90%">
-                                  <span t-if="o.partner_id" t-field="o.partner_id.name"/><br/>
+                                <div class="div_izquierdo" style="width:90%;height:auto">
+                                  <span t-if="o.partner_id" t-field="o.partner_id.name"><br/></span>
                                   <span t-if="o.partner_id.street" t-field="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
-                                  <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/><br/>
+                                  <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/>
                                 </div>
 
                             </div>
 
                           </div>
                         </div>
-
-
-
                         <br/>
                         <table style="width:100%; border:1; align:center">
 
@@ -361,11 +351,11 @@
 
                         <br/>
 
-                        <p>
+                        <div>
                             <strong>Observación: </strong> <span t-if="o.narration" t-field="o.narration"/>
-                        </p>
+                        </div>
 
-                        <table style="width:75%; border:none;">
+                        <table style="width:100%; border:none;">
                             <tr style="border:none;">
                                 <td>
                                     <strong>POR FAVOR HACER PAGO POR TRANSFERENCIA BANCARIA A:</strong>
@@ -447,16 +437,16 @@
 
                         </table>
 
-                        <h3 align="right">
+                        <h4 align="right">
                             <strong>
                                 <span t-if="o.user_id.name" t-field="o.user_id.name"/>
                             </strong>
-                        </h3>
+                        </h4>
 
 
-                        <p>
+                        <div style="padding-bottom:5px">
                             <strong>Nota: </strong>Reclamos por defectos, errores en el envio o material faltante, seran considerados solo si es hecho durante los primeros 10 dias de haber recibido la mercancia. La responsabilidad de SOLUPAPER, LLC, es limitada a el remplazo en caso de que el material tenga defectos.<br/>
-                        </p>
+                        </div>
 
                         <p>
                             <font color="red">
