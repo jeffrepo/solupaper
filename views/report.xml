@@ -2,14 +2,47 @@
 <odoo>
     <data>
 
-        <report
+        <!-- <report
             id="solupaper_purchase_order1"
             string="Orden de compra"
             model="purchase.order"
             report_type="qweb-pdf"
             file="solupaper.reporte_purchase_order1"
             name="solupaper.reporte_purchase_order1"
-        />
+        /> -->
+
+        <record id="solupaper_purchase_order1" model="ir.actions.report">
+            <field name="name">Orden de compra</field>
+            <field name="model">purchase.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">solupaper.reporte_purchase_order1</field>
+            <field name="report_file">solupaper.reporte_purchase_order1</field>
+            <field name="binding_model_id" ref="model_purchase_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="account_solupaper_new_format" model="ir.actions.report">
+            <field name="name">Factura SOLUPAPER</field>
+            <field name="model">account.move</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">solupaper.report_account_solupaper</field>
+            <field name="report_file">solupaper.report_account_solupaper</field>
+            <field name="print_report_name"></field>
+            <field name="attachment"></field>
+            <field name="binding_model_id" ref="account.model_account_move"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="action_report_saleorder_solupaper" model="ir.actions.report">
+            <field name="name">Proforma</field>
+            <field name="model">sale.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">solupaper.reporte_sale_order</field>
+            <field name="report_file">solupaper.reporte_sale_order</field>
+            <field name="print_report_name"></field>
+            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field>
+        </record>
 
     </data>
 </odoo>

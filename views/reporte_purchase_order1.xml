@@ -132,7 +132,7 @@
                         <div style="height:25px"/>
                         <div class="condiciones">
                             <p>
-                                <strong>Conditiones y Terminos:</strong><br/>
+                                <strong>Condiciones y Terminos:</strong><br/>
                                 Puerto destino: <span t-field="o.sale_order_id.puerto"/><br/>
                                 Cliente: <span t-field="o.sale_order_id.partner_id.name"/><br/>
                                 Orden de compra del cliente: <span t-field="o.sale_order_id.po_customer_name"/><br/>
