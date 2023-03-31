@@ -22,11 +22,11 @@
                         </div>
 
                         <div class="izquierda" style="float:left;">
-                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:250px" alt="Logo"/>
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:175px" alt="Logo"/>
                         </div>
                         <div class="clearfix"/>
 
-                        <div style="height:50px"/>
+                        <div style="height:25px"/>
 
                         <div class="izquierda" style="float:left;width:500px">
                             <p><strong><u>Número de orden: <span t-field="o.sale_order_id.po_customer"/></u></strong></p>
@@ -57,7 +57,7 @@
                               <table style="margin: 0px auto;width:100%">
                                   <tr>
 
-                                      <td style="text-align:right;width:150px">Incoterm:</td> 
+                                      <td style="text-align:right;width:150px">Incoterm:</td>
                                       <td style="text-align:left;width:150px"><span t-esc="o.solupaper_incoterm_id.name"/></td>
                                   </tr>
                                   <tr>
@@ -95,7 +95,7 @@
                             </table>
                         </div>
                         <div class="clearfix"/>
-                        <div style="height:50px"/>
+                        <div style="height:25px"/>
 
                         <div class="tabla">
                           <table style="margin: 0px auto;width:100%">
@@ -129,14 +129,14 @@
                           </table>
                         </div>
 
-                        <div style="height:50px"/>
+                        <div style="height:25px"/>
                         <div class="condiciones">
                             <p>
-                                <strong>Conditiones y Terminos:</strong><br/>
+                                <strong>Condiciones y Terminos:</strong><br/>
                                 Puerto destino: <span t-field="o.sale_order_id.puerto"/><br/>
                                 Cliente: <span t-field="o.sale_order_id.partner_id.name"/><br/>
                                 Orden de compra del cliente: <span t-field="o.sale_order_id.po_customer_name"/><br/>
-                                
+
                             </p>
                             <p style="color:red">
                                 <strong>
@@ -150,7 +150,7 @@
                             </p>
                         </div>
 
-                        <div class="break" style="height:50px"/>
+                        <div class="break" style="height:25px"/>
                         <span t-field="o.notes"/>
                          <div class="break" style="height:25px"/>
                         <div id="signature">

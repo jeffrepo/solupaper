@@ -13,19 +13,23 @@
                  <style>
                    <!-- estilos para el encabezado  -->
                    div.div_box_general_header{
-                     margin:auto;
-                     margin-top:0px;
                      width:100%;
-                     height:300px;
-                     <!-- background:#F4D03F; -->
+                     <!-- background:red; -->
+                     display: flex;
+                     overflow:auto;
+                     display: block;
+                     margin: 0;
+                     padding: 0;
                    }
 
                    div.div_right_box{
-                     margin:auto;
-                     margin-top:5px;
-                     width:50%;
-                     height:290px;
-                     float:right;
+                    <!-- display:flex;
+                    overflow:auto; -->
+                    margin:auto;
+                    margin-top:5px;
+                    width:50%;
+                    height:290px;
+                    float:right;
                      <!-- background:#F8C471; -->
                    }
 
@@ -103,13 +107,11 @@
 
                    div.div_body_general{
                      display: flex;
-                     align-items: stretch;
-                     margin:auto;
-                     margin-top:0px;
+                     overflow:auto;
                      width:100%;
-                     min-height:1020px;
-                     max-height:2000px;
-                     <!-- border: 1px solid black; -->
+                     display: block;
+                     margin: 0;
+                     padding: 0;
                    }
 
                    div.div_cajita_izquierda{
@@ -161,8 +163,8 @@
 
                    <div class="div_left_box">
 
-                     <div class="div_logo_box">
-                       <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:100%; height:90%; overflow: hidden" alt="Logo"/>
+                     <div class="div_logo_box" style="text-align:center">
+                       <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:70%;overflow: hidden" alt="Logo"/>
                      </div>
                      <br/>
                      <div class="div_box_header_standard">
@@ -207,7 +209,6 @@
                          <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/><br/>
                          TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
                          FEI: <span t-if="o.company_id.vat" t-esc="o.company_id.vat"/><br/>
-                         <!-- <span t-if="o.company_id.name" t-esc="o.company_id.street"/><br/> -->
                        </p>
                      </div>
 
@@ -215,41 +216,24 @@
                  </div>
 
 
-                 <div class="div_body_general">
+                 <div class="div_body_general" >
 
-
-                   <div class="caja_horizontal">
-
-                     <div class="div_cajita_izquierda" style="float:left">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Quantity of containers</p>
-                       </div>
-                       <br/>
+                   <div style="display:flex; align-items: stretch; border: 1px solid black">
+                     <div style="width:50%; height:100%; border:1px solid black; float:left; box-sizing: border-box; ">
+                       <div style="background:#D7DBDD; width:100%;align-items: center; text-align:center; border: 1px solid black">Quantity of containers</div>
                        <p style="text-align:center">
                          <span t-if="o.quantity_containers" t-esc="o.quantity_containers"/>
                        </p>
                      </div>
-
-                     <div class="div_cajita_izquierda" style="float:right">
-                       <div class="div_cajita_1">
-                         <p style="text-align:center">Type of Container:</p>
-                       </div>
-                       <table style="width:100%; height:65px" border="1">
+                     <div style="width:50%; height:100%; border:1px solid black; float:right;align-items: center; box-sizing: border-box; ">
+                       <div style="background:#D7DBDD; width:100%; text-align:center;border: 1px solid black">Type of Container:</div>
+                       <table style="width:100%;height:100%;border: 1px">
                          <tr style="text-align:center">
-                           <td>
-                             20'
-                           </td>
-                           <td>
-                             40'DC
-                           </td>
-                           <td>
-                             40'HC
-                           </td>
-                           <td>
-                             40 NOR
-                           </td>
+                           <td>20'</td>
+                           <td>40'DC</td>
+                           <td>40'HC</td>
+                           <td>40'NOR</td>
                          </tr>
-
                          <tr style="text-align:center">
                            <td>
                              <t t-if="o.type_container == 'a'">
@@ -275,23 +259,20 @@
                              </t>
                            </td>
                          </tr>
-
                        </table>
                      </div>
-
                    </div>
 
-                   <div class="caja_horizontal">
-                     <div class="div_cajita_izquierda" style="float:left">
+                   <div style="width:100%; overflow:auto; border: 1px solid black; display:flex; align-items:stretch">
+                     <div style="height:100%;width:50%; border:1px solid black; float:left;box-sizing: border-box;">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Incoterm</p>
                        <br/>
-                       <p style="text-align:center"><span t-if="o.incoterm_id" t-esc="o.incoterm_id.name"/></p>
+                       <p style="text-align:center">
+                         <span t-if="o.incoterm_id" t-esc="o.incoterm_id.name"/>
+                       </p>
                      </div>
-
-                     <div class="div_cajita_izquierda" style="float:right; background:#F1C40F">
+                     <div style="height:100%;width:50%;border:1px solid black; float:right; background:yellow;box-sizing: border-box;">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Free days at destination:</p>
-
-                       <br/>
                        <t t-if="o.days_free == 'a'">
                          <p style="text-align:center"><b>7 Days Free</b></p>
                        </t>
@@ -302,53 +283,51 @@
                          <p style="text-align:center"><b>21 Days Free</b></p>
                        </t>
                      </div>
-
                    </div>
 
-                   <div class="caja_horizontal">
-                     <div class="div_cajita_izquierda" style="float:left">
+                   <div style="width:100%; display:flex; overflow:auto; border: 1px solid black">
+                     <div style="width:50%; height:100%; float:left; border:1px solid black">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Port of Loading:</p>
 
-                       <br/>
                        <p style="text-align:center">
                          <span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_origen"/>
                        </p>
+
                      </div>
 
-                     <div class="div_cajita_izquierda" style="float:right">
+
+                     <div style="width:50%; height:100%; float:right; border:1px solid black">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Port of Discharge:</p>
 
-                       <br/>
                        <p style="text-align:center">
                          <span t-if="o.proforma_id.puerto" t-esc="o.proforma_id.puerto"/>
                        </p>
+
                      </div>
                    </div>
 
-                   <div class="caja_horizontal">
-                     <!-- <div class="div_espacio_total"> -->
+
+                   <div style="width:100%; display:flex; overflow:auto; border: 1px solid black">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Place of Delivery in Case of  DAP:</p>
-                       <br/>
+
                        <p style="text-align: center;">
                          <span t-if="o.place_deliver" t-esc="o.place_deliver"/>
                        </p>
-                     <!-- </div> -->
                    </div>
 
-                   <div class="caja_horizontal" style="min-height:175px; max-height:200px">
+                   <div style="width:100%; display:flex; overflow:auto; align-items: stretch; border: 1px solid black">
 
-                     <div class="div_cajita_izquierda" style="float:left">
+                     <div style="width:50%; height:100%; float:left; border:1px solid black;box-sizing: border-box;">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Supplier :</p>
-                       <br/>
                        <p style="text-align:center">
                          <t t-if="o.purchase_order">
                           <t t-if="o.purchase_order.partner_id">
                             <t t-if="o.purchase_order.partner_id.parent_id">
-                              <span t-if="o.purchase_order.partner_id.parent_id.name" t-esc="o.purchase_order.partner_id.parent_id.name"/><br/>
+                              <span t-if="o.purchase_order.partner_id.parent_id.name" t-esc="o.purchase_order.partner_id.parent_id.name"><br/></span>
                               <span t-if="o.purchase_order.partner_id.parent_id.street" t-esc="o.purchase_order.partner_id.parent_id.street"/>
-                              <span t-if="o.purchase_order.partner_id.parent_id.city" t-esc="o.purchase_order.partner_id.parent_id.city"/><br/>
-                              <span t-if="o.purchase_order.partner_id.parent_id.state_id" t-esc="o.purchase_order.partner_id.parent_id.country_id.name"/><br/>
-                              <span t-if="o.purchase_order.partner_id.parent_id.phone" t-esc="o.purchase_order.partner_id.parent_id.phone"/><br/>
+                              <span t-if="o.purchase_order.partner_id.parent_id.city" t-esc="o.purchase_order.partner_id.parent_id.city"><br/></span>
+                              <span t-if="o.purchase_order.partner_id.parent_id.state_id" t-esc="o.purchase_order.partner_id.parent_id.country_id.name"><br/></span>
+                              <span t-if="o.purchase_order.partner_id.parent_id.phone" t-esc="o.purchase_order.partner_id.parent_id.phone"><br/></span>
                             </t>
                           </t>
                          </t>
@@ -356,24 +335,23 @@
 
                      </div>
 
-                     <div class="div_cajita_izquierda" style="float:right;">
+                     <div style="width:50%; height:100%; float:right; border:1px solid black;box-sizing: border-box;">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Supplier Contact:</p>
-                       <br/>
                        <p style="text-align:center">
                          <t t-if="o.purchase_order">
-                          <span t-if="o.purchase_order.partner_id.name" t-esc="o.purchase_order.partner_id.name"/><br/>
+                          <span t-if="o.purchase_order.partner_id.name" t-esc="o.purchase_order.partner_id.name"><br/></span>
                           <span t-if="o.purchase_order.partner_id.street" t-esc="o.purchase_order.partner_id.street"/>
-                          <span t-if="o.purchase_order.partner_id.city" t-esc="o.purchase_order.partner_id.city"/><br/>
-                          <span t-if="o.purchase_order.partner_id.state_id" t-esc="o.purchase_order.partner_id.country_id.name"/><br/>
-                          <span t-if="o.purchase_order.partner_id.phone" t-esc="o.purchase_order.partner_id.phone"/><br/>
+                          <span t-if="o.purchase_order.partner_id.city" t-esc="o.purchase_order.partner_id.city"><br/></span>
+                          <span t-if="o.purchase_order.partner_id.state_id" t-esc="o.purchase_order.partner_id.country_id.name"><br/></span>
+                          <span t-if="o.purchase_order.partner_id.phone" t-esc="o.purchase_order.partner_id.phone"><br/></span>
                          </t>
                        </p>
                      </div>
 
                    </div>
 
-                   <div class="caja_horizontal">
-                     <!-- <div class="div_espacio_total_0"> -->
+                   <div style="width:100%; display:flex; overflow:auto; border: 1px solid black">
+
                        <p style="text-align:center;background:#D7DBDD; border: 1px solid black">Description of cargo and terms</p>
                        <table style="width:100%;border-bottom: 1px solid white;border: 0px solid white;">
                          <t t-if="o.purchase_order">
@@ -388,27 +366,24 @@
                            </t>
                          </t>
                        </table>
-                     <!-- </div> -->
+
                    </div>
 
 
-                   <div class="div_cajita_1" >
+                   <div style="width:100%;border: 1px solid black;background:#D7DBDD">
                      <p>
                        NOTE: Please send hard copy of booking as soon as you have it.
                        Please note we need Pictures of every load before and after loading.
                      </p>
                    </div>
 
-                   <p style="page-break-after:always;"></p>
-
-                   <div class="caja_horizontal" style="margin-bottom:3px; min-height:115px">
-                     <div class="div_cajita_izquierda" style="width:30%;background:#D7DBDD;float:left; min-height:115px">
+                   <div style="width:100%; display:flex; overflow:auto; border: 1px solid black; background:#D7DBDD;">
+                     <div style="width:30%;background:#D7DBDD;float:left; height:100%">
                        <br/><br/>
                        <p style="text-align:center">Client Information:</p>
-                       <br/>
                      </div>
 
-                     <div class="div_cajita_izquierda" style="width:70%;float:right; min-height:115px">
+                     <div style="width:70%;float:right; height:100%; border: 1px solid black; background:white">
                        <p style="text-align:center">
                          <span t-if="o.proforma_id.partner_id.name" t-esc="o.proforma_id.partner_id.name"/><br/>
                          <span t-if="o.proforma_id.partner_id.street" t-esc="o.proforma_id.partner_id.street"/>
@@ -420,9 +395,9 @@
 
                    </div>
 
-                   <div style="width:100%;border: 1px solid black; min-height:40px">
-                     <!-- <div class="div_espacio_total_0"> -->
-                       <div class="div_cajita_1">
+                   <div style="width:100%; display:flex; overflow:auto; border: 1px solid black">
+
+                       <div style="text-align:center; background:#D7DBDD; border: 1px solid black; width:100%">
                          <p style="text-align:center">Freigth Forward Information</p>
                        </div>
                        <table style="width:100%">
@@ -450,16 +425,12 @@
                            </td>
                          </tr>
                        </table>
-                     <!-- </div> -->
-
-
-
 
                    </div>
 
-                   <div class="caja_horizontal">
+                   <div style="width:100%; display:flex; overflow:auto; border: 1px solid black;align-items:stretch">
 
-                     <div class="div_cajita_izquierda" style="float:left">
+                     <div style="width:50%; height:100%; border:1px solid black; float:left; box-sizing: border-box">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">Price Quoted:</p>
                        <br/>
                        <p style="text-align:center">
@@ -468,7 +439,7 @@
 
                      </div>
 
-                     <div class="div_cajita_izquierda" style="float:right">
+                     <div style="width:50%; height:100%; border:1px solid black; float:right; box-sizing: border-box">
                        <p style="text-align:center;background:#D7DBDD; border: 1px solid black">Movement Type:</p>
                        <br/>
                        <p style="text-align:center">
