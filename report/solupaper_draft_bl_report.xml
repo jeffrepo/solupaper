@@ -12,12 +12,11 @@
 
                <style>
                  div.contenedor_encabezado{
-                   margin:auto;
-                   margin-top:0px;
-                   margin-bottom:5px;
-                   width:100%;
-                   min-height:300px;
-                   max-height:600px;
+                  display:flex;
+                  overflow:auto;
+                  margin:auto;
+                  margin-top:0px;
+                  width:100%;
                    <!-- border: 1px solid black; -->
                  }
 
@@ -44,8 +43,8 @@
                    margin:auto;
                    margin-top:0px;
                    width:50%;
-                   min-height:200px;
-                   max-height:600px;
+                   display:flex;
+                   overflow:auto;
                    border: 1px solid black;
                  }
 
@@ -63,35 +62,34 @@
                <div class="contenedor_encabezado">
                  <div class="mitad_ancho" style="float:left; border: 0px solid black">
 
-                   <div style="width:100%; height:150px; border: 1px solid black;">
-                     <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:100%; height:90%; overflow: hidden" alt="Logo"/>
+                   <div style="width:100%; height:130px; border: 1px solid black; text-align:center">
+                     <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:70%; height:80%; overflow: hidden; text-align:center" alt="Logo"/>
                    </div>
 
-                   <div style="width:100%; height:148px; border: 1px solid black;">
+                   <div style="width:100%; height:auto; border: 1px solid black;">
                      <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">BOOKING NBR:</p>
                      <br/>
                      <p style="text-align:center"><span t-if="o.booking_nbr" t-esc="o.booking_nbr"/></p>
                    </div>
 
                  </div>
-                 <div class="mitad_ancho_e" style="float:right">
+                 <div style="float:right; width:50%; height:100%; border:1px solid black">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">SHIPPER</p>
-                    <p style="text-align:center">
-
-                         <span t-if="o.company_id.name" t-esc="o.company_id.name"/><br/>
-                         <span t-if="o.company_id.street" t-esc="o.company_id.street"/><br/>
-                         <span t-if="o.company_id.city" t-esc="o.company_id.city"/> <span t-if="o.company_id.state_id" t-esc="o.company_id.state_id.name"/><br/>
-                         <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/><br/>
-                         TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
-                         FEI: <span t-if="o.company_id.vat" t-esc="o.company_id.vat"/><br/>
-                         <!-- <span t-if="o.company_id.name" t-esc="o.company_id.street"/><br/> -->
-                       </p>
+                   <p style="text-align:center">
+                     <span t-if="o.company_id.name" t-esc="o.company_id.name"/><br/>
+                     <span t-if="o.company_id.street" t-esc="o.company_id.street"/><br/>
+                     <span t-if="o.company_id.city" t-esc="o.company_id.city"/> <span t-if="o.company_id.state_id" t-esc="o.company_id.state_id.name"/><br/>
+                     <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/><br/>
+                     TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
+                     FEI: <span t-if="o.company_id.vat" t-esc="o.company_id.vat"/><br/>
+                     <br/>
+                    </p>
                  </div>
                </div>
 
                <br/>
 
-               <div class="contenedor_b" style="border: 1px solid black;">
+               <div style="border: 1px solid black; height:auto; width:100%">
                  <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">CONSIGNEE</p>
                  <br/>
                  <p style="text-align:center"><span t-if="o.proforma_id" t-esc="o.proforma_id.partner_id.name"/></p>
@@ -99,14 +97,14 @@
 
                <br/><br/>
 
-               <div class="contenedor_b">
-                 <div class="mitad_ancho" style="float:left">
+               <div style="width:100%; height:100%; display:table; overflow:auto; table-layout: fixed">
+                 <div style="float:left;width:50%;border: 1px solid black; display: table-cell; vertical-align: top">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">NOTIFY</p>
                    <br/>
                    <p style="text-align:center"><span t-esc="o.proforma_id.partner_id.name"/></p>
                  </div>
 
-                 <div class="mitad_ancho" style="float:right">
+                 <div style="float:right;width:50%;border:1px solid black; display: table-cell; vertical-align: top">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">ALSO NOTIFY</p>
                    <br/>
                    <p style="text-align:center"><span t-esc="o.also_notify"/></p>
@@ -115,35 +113,40 @@
 
                <br/><br/>
 
-               <div class="contenedor_b">
-                 <div class="mitad_ancho" style="float:left; min-height:100px">
-                   <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">VESSEL AND VOY</p>
-                   <p style="text-align:center"> <span t-esc="o.vesse_voy"/></p>
+               <div style="overflow:auto; display:flex; width:100%; height:auto">
+
+                 <div style="float:left; width:50%; height:100%; border:1px solid black">
+                   <div style="height:auto; width:100%; border: 1px solid; black">
+                     <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">VESSEL AND VOY</p>
+                     <p style="text-align:center"> <span t-esc="o.vesse_voy"/></p>
+                   </div>
+
+                   <div style="float:left; height:auto; width:100%; border: 1px solid; black">
+                     <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">PORT OF DISCHARGE</p>
+                     <p><span t-if="o.proforma_id" t-esc="o.proforma_id.puerto"/></p>
+                   </div>
                  </div>
 
-                 <div class="mitad_ancho" style="float:right; min-height:100px">
-                   <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">PORT OF LOADING</p>
-                   <p style="text-align:center"><span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_origen"/></p>
+                 <div style="float:right; width:50%; height:100%; border:1px solid black">
+                   <div style="float:right; height:auto; width:100%; border: 1px solid; black">
+                     <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">PORT OF LOADING</p>
+                     <p style="text-align:center"><span t-if="o.purchase_order" t-esc="o.purchase_order.puerto_origen"/></p>
+                   </div>
+
+                   <div style="float:left; height:auto; width:100%; border: 1px solid; black">
+                     <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">PLACE OF DELIVERY</p>
+                     <p style="text-align:center"><span t-esc="o.place_deliver"/></p>
+                   </div>
                  </div>
 
-                 <div class="mitad_ancho" style="float:left; min-height:100px">
-                   <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">PORT OF DISCHARGE</p>
-                   <p><span t-if="o.proforma_id" t-esc="o.proforma_id.puerto"/></p>
-                 </div>
-
-                 <div class="mitad_ancho" style="float:left; min-height:100px">
-                   <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">PLACE OF DELIVERY</p>
-                   <p style="text-align:center"><span t-esc="o.place_deliver"/></p>
-                 </div>
                </div>
 
                <br/><br/>
-               <p style="page-break-after:always;"></p>
-               <div class="contenedor_b" style="min-height:305px">
-                 <div class="contenedor_c" style="float:left">
+               <div style="overflow:auto; display:flex; width:100%; height:auto; border:1px solid black">
+                 <div style="float:left; width:30%; height:100%">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">MARKS</p>
                  </div>
-                 <div class="contenedor_c" style="float:left; width:40%; margin-bottom:10px">
+                 <div style="float:left; width:40%; border: 1px solid black">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">DESCRIPTION OF CARGO</p>
                    <br/>
                    <t t-foreach="o.purchase_order.order_line" t-as="line">
@@ -151,14 +154,14 @@
                      <br/>
                    </t>
                  </div>
-                 <div class="contenedor_c" style="float:left; border: 0px solid black">
-                   <div style="width:100%; height:100px; border: 1px solid black;">
+                 <div style="float:left; border: 0px solid black; width:30%">
+                   <div style="width:100%; height:auto; border: 1px solid black;">
                      <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">GROSS</p>
                    </div>
-                   <div style="width:100%; height:100px; border: 1px solid black;">
+                   <div style="width:100%; height:auto; border: 1px solid black;">
                      <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">NET</p>
                    </div>
-                   <div style="width:100%; height:100px; border: 1px solid black;">
+                   <div style="width:100%; height:auto">
                      <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">MEASUREM</p>
                    </div>
                  </div>
