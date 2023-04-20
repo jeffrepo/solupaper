@@ -7,7 +7,7 @@
     <record model="ir.rule" id="solupaper_no_mostrarproveedores">
         <field name="name">No mostrar proveedores</field>
         <field name="model_id" search="[('model','=','res.partner')]" model="ir.model"/>
-        <field name="domain_force">['|','&',('supplier_rank','=',user.x_studio_ver_proveedores),('customer_rank','>=',0 ),'|','&',('customer_rank','>=',0 ),('supplier_rank','=',0),'&',('customer_rank','=',0),('supplier_rank','=',0)] </field>
+        <field name="domain_force">['|','&amp;',('supplier_rank','=',user.x_studio_ver_proveedores),('customer_rank','>=',0 ),'|','&amp;',('customer_rank','>=',0 ),('supplier_rank','=',0),'&amp;',('customer_rank','=',0),('supplier_rank','=',0)] </field>
     </record>
 
 
