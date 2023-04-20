@@ -26,6 +26,7 @@
         'views/solupaper_logistica_view.xml',
         'report/solupaper_logistica_report.xml',
         'report/ir_actions_report.xml',
+        'security/solupaper_security.xml',
         'report/solupaper_circulacion_mercancias_report.xml',
         'report/solupaper_draft_bl_report.xml'
     ],
