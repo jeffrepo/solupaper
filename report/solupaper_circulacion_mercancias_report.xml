@@ -5,24 +5,23 @@
 
          <t t-set="data_report_margin_top" t-value="12"/>
          <t t-set="data_report_header_spacing" t-value="4"/>
-
-         <t t-foreach="docs" t-as="o">
+         <t t-set="o" t-value="o.with_context(lang=o.proforma_id.partner_id.lang)" />
+         
            <div class="article">
                <div class="page">
 
                  <div style="border:1px solid black; display:flex; overflow:auto; width:100%">
-                   <p style="text-align:center; background:#F9E79F; border:1px solid black; margin-bottom: 0;">CERTIFICADO DE CIRCULACIÓN DE MERCANCÍAS</p>
+                   <p style="text-align:center; background:#F9E79F; border:1px solid black; margin-bottom: 0;">GOODS MOVEMENT CERTIFICATE</p>
                    <div style="width:100%; height:auto; display:table;overflow:auto; background:#AED6F1; table-layout: fixed;border:1px solid black">
 
                      <div style="height:100%; width:50%; float:left; background:#AED6F1; display:flex;flex-direction: column;">
                        <div style="flex: 1; width:100%; border:1px solid black">
-                         <u color="blue">1. Exportador</u> <br/>
-                         POR FAVOR COLOCAR AQUI DATOS DEL FABRICANTE<br/>
-                         INCLUYENDO EL VAT / PLEASE ADD HERE SUPPLIER INFORMATION INLCUDING VAT NUNMBER
+                         <u color="blue">1. Exporter</u> <br/>
+                         PLEASE ADD HERE SUPPLIER INFORMATION INLCUDING VAT NUNMBER
                          <br/><br/><br/>
                        </div>
                        <div style="flex: 1; width:100%; border:1px solid black">
-                         <u>3. Destinatario</u> <br/>
+                         <u>3. Addressee</u> <br/>
                          <p style="text-align:center">
                            <span t-if="o.proforma_id.partner_id.name" t-esc="o.proforma_id.partner_id.name"/><br/>
                            <span t-if="o.proforma_id.partner_id.street" t-esc="o.proforma_id.partner_id.street"/>
@@ -34,7 +33,7 @@
                        </div>
                        <div style="flex: 1; width:100%">
                          <p>
-                           <u>6. Información relativa al transporte</u> <br/>
+                           <u>6. Transport information</u> <br/>
                          </p>
                          <br/>
                          <br/>
@@ -50,10 +49,10 @@
 
                        <div style="height:auto; width:100%; border:1px solid black">
                          <p>
-                           <u>2. Certificado utilizado en los intercambios preferenciales entre.</u> <br/>
+                           <u>2. Certificate used in preferential exchanges between.</u> <br/>
                            <p style="text-align:center">
                              C.E.E<br/>
-                             y <br/>
+                             and <br/>
                              <span t-if="o.pais_destino_id" t-esc="o.pais_destino_id.name"/>
                            </p>
                          </p>
@@ -61,13 +60,13 @@
 
                        <div style="height:auto; width:100%; border:1px solid black;display:flex; overflow:auto;">
                          <div style="height:100%; width:50%; float: left">
-                           <u>4. País,grupo de países o territorios de donde se consideran originarios los productos.</u>
+                           <u>4. Country, group of countries or territories from which the products are considered to originate.</u>
                            <br/>
                            <br/>
                            <p style="text-align:center"><span t-if="o.pais_origen_id" t-esc="o.pais_origen_id.name"/></p>
                          </div>
                          <div style="height:100%; width:50%; float: right">
-                           <u>5. País, grupo de países ó territorio de destino.</u>
+                           <u>5. Country, group of countries or territory of destination.</u>
                            <br/>
                            <br/>
                            <p style="text-align:center"><br/><span t-if="o.pais_destino_id" t-esc="o.pais_destino_id.name"/></p>
@@ -75,8 +74,8 @@
                        </div>
 
                        <div style="height:auto; width:100%; border:1px solid black">
-                         <u>7. Observaciones</u>
-                         <p>Expedido a Posteriori (esta leyenda se aplicara en caso tal que el EUR1 sea emitido una vez que la  carga haya salido del Puerto)</p>
+                         <u>7. Observations</u>
+                         <p>Issued a posteriori (this legend will apply in the event that the EUR1 is issued once the cargo has left the Port)</p>
                          <br/>
                        </div>
 
@@ -88,7 +87,7 @@
 
                    <div style="width:100%; height:auto; display:table; overflow:auto; background:#AED6F1; table-layout: fixed;border:1px solid black">
                      <div style="width:60%; display: table-cell;vertical-align: border: 1px solid black;">
-                       <u>8.  Número de orden; marcas, numeración, número y naturaleza de los bultos (1). designación de las mercancías.</u>
+                       <u>8.  Number of order; brands, numbering, number and nature of the packages (1). description of the goods.</u>
                        <table style="width:100%; border:none">
                          <t t-if="o.purchase_order">
                            <t t-if="o.purchase_order.order_line">
@@ -104,42 +103,42 @@
                        </table>
                      </div>
                      <div style="width:20%; display: table-cell;vertical-align: top;padding: 10px; border: 1px solid black;">
-                       <u>9. Masa bruta (kg.) u otra medida (litros, m, etc).</u>
+                       <u>9. Gross mass (kg.) or other measurement (litres, m, etc.).</u>
                      </div>
                      <div style="width:20%; display: table-cell;vertical-align: top;padding: 10px; border: 1px solid black;">
                        <u>10. Facturas</u><br/>
-                       <p style="text-align:center">(Mención facultativa)</p>
+                       <p style="text-align:center">(optional mention)</p>
                      </div>
                    </div>
 
                    <div style="width:100%; height:auto; display:table; overflow:auto; background:#AED6F1; table-layout: fixed;border:1px solid black">
                      <div style="width:50%; display: table-cell;vertical-align: top; border: 1px solid black;">
                        <u>
-                         11. VISADO DE LA ADUANA.
+                         11. CUSTOMS VISA.
                        </u>
-                       <p style="text-align:center">Declaración certificada conforme<br/>
-                       Documento de exportación (2)<br/>
-                       Modelo……………….. No………………..<br/>
-                       del………………………………………………….<br/>
-                       Aduana…………………………………………….<br/>
-                       País o territorio de expedición………………….<br/>
-                       En……….
-                       <div><p style="text-align:center">………………………………<br/>Firma</p><br/></div>
+                       <p style="text-align:center">Certified Declaration of Conformity<br/>
+                       export document (2)<br/>
+                       Model……………….. No………………..<br/>
+                       of the………………………………………………….<br/>
+                       Customs…………………………………………….<br/>
+                       Country or territory of dispatch………………….<br/>
+                       In……….
+                       <div><p style="text-align:center">………………………………<br/>Signature</p><br/></div>
 
                        </p><br/>
                      </div>
                      <div style="width:50%; display: table-cell;vertical-align; top;border: 1px solid black;">
 
-                       <u>12. DECLARACIÓN DEL EXPORTADOR</u>
-                       <p>El que suscribe declara que las mercancías arriba designadas cumplen las condiciones
-                          exigidas para la expedición del presente certificado.
+                       <u>12. DECLARATION OF THE EXPORTER</u>
+                       <p>The undersigned declares that the goods designated above meet the conditions
+                          required for the issuance of this certificate.
                        </p>
                        <div style="display: flex; justify-content: center; width:100%; border-top-color: #CC0000;">
 
                          <table style="width:90%; border: 0px solid #AED6F1; border-style: none;" ALIGN="center">
                            <tr style="text-align:center">
-                             <td>En………….</td>
-                             <td>a………….</td>
+                             <td>In………….</td>
+                             <td>to………….</td>
                            </tr>
                          </table>
 
@@ -147,7 +146,7 @@
 
                        <br/>
                        <br/>
-                       <p style="text-align:center">Firma</p>
+                       <p style="text-align:center">Signature</p>
 
                      </div>
 
@@ -163,8 +162,16 @@
 
                </div>
            </div>
-         </t>
+         
 
        </t>
     </template>
+    
+    <template id="solupaper_circulacion_mercancias_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="solupaper.solupaper_circulacion_mercancias_report_document" t-lang="o.proforma_id.partner_id.lang"/>
+            </t>
+        </t>
+    </template>     
 </odoo>

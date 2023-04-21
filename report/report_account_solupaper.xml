@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="report_account_solupaper">
+    <template id="report_account_solupaper_document">
        <t t-call="web.html_container">
            <t t-set="data_report_margin_top" t-value="12"/>
            <t t-set="data_report_header_spacing" t-value="4"/>
-            <t t-foreach="docs" t-as="o">
+           <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
+            
                 <div class="article">
                     <div class="page" style="font-size:16px">
 
@@ -125,8 +126,8 @@
                           </div>
                           <div style="float:right; width:50%; height:auto">
                             Invoice: <span t-if="o.name" t-field="o.name"/>| Currency: <span t-if="o.currency_id.name" t-field="o.currency_id.name"/><br/>
-                            Numero de orden: <span t-if="values['n_orden']" t-esc="values['n_orden']"/>| Intercorm: <span t-if="values['intercorm']" t-esc="values['intercorm']"/><br/>
-                            Date: <span t-if="o.invoice_date" t-field="o.invoice_date"/>| Puerto: <span t-if="values['puerto']" t-esc="values['puerto']"/><br/>
+                            Number of order: <span t-if="values['n_orden']" t-esc="values['n_orden']"/>| Intercorm: <span t-if="values['intercorm']" t-esc="values['intercorm']"/><br/>
+                            Date: <span t-if="o.invoice_date" t-field="o.invoice_date"/>| Port: <span t-if="values['puerto']" t-esc="values['puerto']"/><br/>
                             Page: <br/>
                           </div>
                         </div>
@@ -145,7 +146,7 @@
                             <div class="div_titulos" style="border-top:3px">
                                 <div class="div_izquierdo_titulo">
                                     <div class="div_izquierdo_titulo_izquierda">
-                                        <strong>Importador</strong>
+                                        <strong>Importer</strong>
                                     </div>
                                 </div>
 
@@ -168,7 +169,7 @@
                             <div class="div_titulos" style="border-top:3px">
                                 <div class="div_izquierdo_titulo">
                                     <div class="div_izquierdo_titulo_izquierda">
-                                        <strong>Importador</strong>
+                                        <strong>Importer</strong>
                                     </div>
                                 </div>
 
@@ -191,19 +192,19 @@
 
                             <tr align="center">
                                 <td>
-                                    <strong>Cliente ID</strong>
+                                    <strong>Customer ID</strong>
                                 </td>
 
                                 <td>
-                                    <strong>Orden del cliente</strong>
+                                    <strong>customer order</strong>
                                 </td>
 
                                 <td>
-                                    <strong>Termino de pago</strong>
+                                    <strong>payment term</strong>
                                 </td>
 
                                 <td>
-                                    <strong>Fecha de vencimiento</strong>
+                                    <strong>Due date</strong>
                                 </td>
                             </tr>
 
@@ -231,15 +232,15 @@
 
                             <tr align="center">
                                 <td>
-                                    <strong>Representante de venta</strong>
+                                    <strong>Sales representative</strong>
                                 </td>
 
                                 <td>
-                                    <strong>Material proveniente de</strong>
+                                    <strong>material from</strong>
                                 </td>
 
                                 <td>
-                                    <strong>Enviado vía SOLUPAPER</strong>
+                                    <strong>Sent via SOLUPAPER</strong>
                                 </td>
                             </tr>
 
@@ -257,7 +258,7 @@
 
                             <tr align="center" style="border:1;" >
                                 <td style="border:1;">
-                                    <strong>CANTIDAD</strong>
+                                    <strong>AMOUNT</strong>
                                 </td>
 
                                 <td style="border:1;">
@@ -265,19 +266,19 @@
                                 </td>
 
                                 <td style="border:1;">
-                                    <strong>ROLLOS/PALETAS</strong>
+                                    <strong>ROLLS/PALLETS</strong>
                                 </td>
 
                                 <td style="border:1;">
-                                    <strong>DESCRIPCIÓN</strong>
+                                    <strong>DESCRIPTION</strong>
                                 </td>
 
                                 <td style="border:1;">
-                                    <strong>PRECIO</strong>
+                                    <strong>PRICE</strong>
                                 </td>
 
                                 <td style="border:1;">
-                                    <strong>PRECIO TOTAL</strong>
+                                    <strong>TOTAL PRICE</strong>
                                 </td>
                             </tr>
 
@@ -322,7 +323,7 @@
                                 <td style="border:none;">
                                 </td>
                                 <td>
-                                    <strong>Monto total</strong>
+                                    <strong>Total amount</strong>
                                 </td>
                                 <td style="text-align:right;">
                                     <span t-if="o.amount_total_signed" t-field="o.amount_total_signed"/>
@@ -336,14 +337,14 @@
                         <table style="width:30%">
                             <tr>
                                 <td>
-                                    <strong>Total Peso Neto (TM)</strong>
+                                    <strong>Total Net Weight (TM)</strong>
                                 </td>
                                 <td style="text-align:right;"><span t-if="values" t-esc="values['total_peso_neto']"/></td>
                             </tr>
 
                             <tr>
                                 <td>
-                                    <strong>Total Peso Bruto (TM)</strong>
+                                    <strong>Total Gross Weight (TM)</strong>
                                 </td>
                                 <td style="text-align:right;"><span t-if="o.total_peso_bruto" t-field="o.total_peso_bruto"/></td>
                             </tr>
@@ -352,13 +353,13 @@
                         <br/>
 
                         <div>
-                            <strong>Observación: </strong> <span t-if="o.narration" t-field="o.narration"/>
+                            <strong>Observation: </strong> <span t-if="o.narration" t-field="o.narration"/>
                         </div>
 
                         <table style="width:100%; border:none;">
                             <tr style="border:none;">
                                 <td>
-                                    <strong>POR FAVOR HACER PAGO POR TRANSFERENCIA BANCARIA A:</strong>
+                                    <strong>PLEASE MAKE PAYMENT BY BANK TRANSFER TO:</strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.transferencia_a" t-field="o.company_id.transferencia_a"/>
@@ -366,14 +367,14 @@
                             </tr>
                             <tr style="border:none;">
                                 <td>
-                                    <strong>BENEFICIARIO:</strong>
+                                    <strong>BENEFICIARY:</strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.beneficiario" t-field="o.company_id.beneficiario"/></td>
                             </tr>
                             <tr style="border:none;">
                                 <td>
-                                    <strong>NOMBRE DEL BANCO: </strong>
+                                    <strong>NAME OF THE BANK: </strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.nombre_banco" t-field="o.company_id.nombre_banco"/>
@@ -382,7 +383,7 @@
 
                             <tr style="border:none;">
                                 <td>
-                                    <strong>NÚMERO DE CUENTA: </strong>
+                                    <strong>ACCOUNT NUMBER: </strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.numero_cuenta" t-field="o.company_id.numero_cuenta"/>
@@ -391,7 +392,7 @@
 
                             <tr style="border:none;">
                                 <td>
-                                    <strong>TIPO DE CUENTA: </strong>
+                                    <strong>ACCOUNT TYPE: </strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.tipo_cuenta" t-field="o.company_id.tipo_cuenta"/>
@@ -418,7 +419,7 @@
 
                             <tr style="border:none;">
                                 <td>
-                                    <strong>DIRECCIÓN DEL BENEFICIARIO: </strong>
+                                    <strong>ADDRESS OF BENEFICIARY: </strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.direccion_beneficiario" t-field="o.company_id.direccion_beneficiario"/>
@@ -427,7 +428,7 @@
 
                             <tr style="border:none;">
                                 <td>
-                                    <strong>TEL: </strong>
+                                    <strong>PHONE: </strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.telefono" t-field="o.company_id.telefono"/>
@@ -445,19 +446,27 @@
 
 
                         <div style="padding-bottom:5px">
-                            <strong>Nota: </strong>Reclamos por defectos, errores en el envio o material faltante, seran considerados solo si es hecho durante los primeros 10 dias de haber recibido la mercancia. La responsabilidad de SOLUPAPER, LLC, es limitada a el remplazo en caso de que el material tenga defectos.<br/>
+                            <strong>Note: </strong>Claims for defects, shipping errors or missing material will be considered only if made within the first 10 days of receiving the merchandise. The responsibility of SOLUPAPER, LLC, is limited to the replacement in case the material has defects.<br/>
                         </div>
 
                         <p>
                             <font color="red">
-                                El pago debe ser realizado cumpliendo la fecha senalada en esta factura, de no ser asi se aplicara un cargo de 0.05% diario al monto total por motivo de penalidad.
+                                Payment must be made on the date indicated in this invoice, otherwise a charge of 0.05% per day will be applied to the total amount due to penalties.
                             </font>
                         </p>
 
 
                     </div>
                 </div>
-            </t>
+            
         </t>
     </template>
+    
+    <template id="report_account_solupaper">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="solupaper.report_account_solupaper_document" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>     
 </odoo>

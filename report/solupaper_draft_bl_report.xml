@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="solupaper_draft_bl_report">
+    <template id="solupaper_draft_bl_report_document">
        <t t-call="web.html_container">
 
          <t t-set="data_report_margin_top" t-value="12"/>
          <t t-set="data_report_header_spacing" t-value="4"/>
-
-         <t t-foreach="docs" t-as="o">
+         <t t-set="o" t-value="o.with_context(lang=o.proforma_id.partner_id.lang)" />
+         
            <div class="article">
              <div class="page">
 
@@ -80,7 +80,7 @@
                      <span t-if="o.company_id.street" t-esc="o.company_id.street"/><br/>
                      <span t-if="o.company_id.city" t-esc="o.company_id.city"/> <span t-if="o.company_id.state_id" t-esc="o.company_id.state_id.name"/><br/>
                      <span t-if="o.company_id.country_id" t-esc="o.company_id.country_id.name"/><br/>
-                     TEL: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
+                     PHONE: <span t-if="o.company_id.phone" t-esc="o.company_id.phone"/><br/>
                      FEI: <span t-if="o.company_id.vat" t-esc="o.company_id.vat"/><br/>
                      <br/>
                     </p>
@@ -206,11 +206,19 @@
 
 
            </div>
-         </t>
+         
 
          <div class="footer">
 
          </div>
        </t>
     </template>
+    
+    <template id="solupaper_draft_bl_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="solupaper.solupaper_draft_bl_report_document" t-lang="o.proforma_id.partner_id.lang"/>
+            </t>
+        </t>
+    </template>     
 </odoo>

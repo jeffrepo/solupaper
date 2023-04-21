@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="reporte_sale_order">
+    <template id="reporte_sale_order_document">
        <t t-call="web.html_container">
            <t t-set="data_report_margin_top" t-value="12"/>
            <t t-set="data_report_header_spacing" t-value="4"/>
-            <t t-foreach="docs" t-as="o">
+           <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
                 <div class="article">
                     <div class="page" style="font-size:16px">
 
@@ -14,7 +14,7 @@
                                     <strong><u><span t-field="o.company_id.name"/></u></strong><br/>
                                     <span t-field="o.company_id.street"/>, <span t-field="o.company_id.street2"/><br/>
                                     <span t-field="o.company_id.city"/>, <span t-field="o.company_id.state_id.name"/>, <span t-field="o.company_id.country_id.name"/><br/>
-                                    Teléfono: <span t-field="o.company_id.phone"/><br/>
+                                    Phone: <span t-field="o.company_id.phone"/><br/>
                                     <span t-field="o.company_id.vat"/>
 
                                 </p>
@@ -29,7 +29,7 @@
                         <div style="height:25px"/>
 
                         <div class="izquierda" style="float:left;width:500px">
-                            <p><strong><u>Número de orden: <t t-if="o.po_customer"><span t-field="o.po_customer"/></t>
+                            <p><strong><u>O: <t t-if="o.po_customer"><span t-field="o.po_customer"/></t>
                                 </u></strong></p>
                         </div>
                         <div class="clearfix"/>
@@ -61,27 +61,27 @@
                                       <td style="text-align:left;width:150px"><span t-esc="o.solupaper_incoterm_id.name"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Puerto:</td>
+                                      <td style="text-align:right;width:150px">Port:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.puerto"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Fecha:</td>
+                                      <td style="text-align:right;width:150px">Date:</td>
                                       <td style="text-align:left;width:200px"><span t-field="o.date_order"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Requerido:</td>
+                                      <td style="text-align:right;width:150px">Required:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.requerido"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Moneda:</td>
+                                      <td style="text-align:right;width:150px">Currency:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.currency_id.name"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Días de crédito:</td>
+                                      <td style="text-align:right;width:150px">Credit days:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.payment_term_id.name"/></td>
                                   </tr>
                                     <tr>
-                                          <td style="text-align:right;width:150px">Orden de compra cliente:</td>
+                                          <td style="text-align:right;width:150px">customer purchase order:</td>
                                           <td style="text-align:left;width:150px"><span t-field="o.po_customer_name"/></td>
                                     </tr>
                               </table>
@@ -90,7 +90,7 @@
                         <div class="izquierda" style="float:left;">
                             <table style="margin: 0px auto;width:100%">
                                 <tr>
-                                    <td style="text-align:center; width:300px">Cliente</td>
+                                    <td style="text-align:center; width:300px">Customer</td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;height:100px">
@@ -103,15 +103,15 @@
                         </div>
                         <div class="clearfix"/>
                         <div style="height:25px"/>
-                        <center><h4><strong>Factura Proforma</strong></h4></center>
+                        <center><h4><strong>Proform Invoice</strong></h4></center>
                         <br/>
                         <div class="tabla">
                           <table style="margin: 0px auto;width:100%">
                               <tr>
-                                  <td style="text-align:center;">Descripción</td>
-                                  <td style="text-align:center;">Cantidad MT</td>
-                                  <td style="text-align:center;">Precio/TM</td>
-                                  <td style="text-align:center;">Valor Total</td>
+                                  <td style="text-align:center;">Description</td>
+                                  <td style="text-align:center;">Quantity TM</td>
+                                  <td style="text-align:center;">Price/TM</td>
+                                  <td style="text-align:center;">Full Value</td>
                               </tr>
 
                               <t t-foreach="o.order_line" t-as="line">
@@ -125,7 +125,7 @@
                               <tr>
                                   <td></td>
                                   <td></td>
-                                  <td style="text-align:center;">Descuento</td>
+                                  <td style="text-align:center;">Discount</td>
                                   <td style="text-align:center;"><span t-field="o.descuento"/>%</td>
                               </tr>
                               <tr>
@@ -140,18 +140,18 @@
                         <div style="height:25px"/>
                         <div class="condiciones">
                             <p>
-                                <strong>Terminos de entrega y condiciones:</strong><br/>
-                                Cargos por demora en puerto son responsabilidad del comprador en caso que incurra alguno.
-                                <br/>Pagos de impuestos, aranceles y nacionalizacion de la carga no estan incluidos en el precio final <br/>
+                                <strong>Delivery terms and conditions:</strong><br/>
+                                Port delay charges are the buyer's responsibility if any are incurred.
+                                <br/>Payments of taxes, tariffs and nationalization of the load are not included in the final price <br/>
 
-                                <br/>Aceptacion de esta proforma acuerda que el comprador esta conforme con la descripcion del material (gsm,anchos y cantidades)<br/>
-                                Pago de aranceles he IVA corren por cuenta del importador, costos por demoras ocacionadas en puerto van a cuenta del importador
+                                <br/>Acceptance of this proforma agrees that the buyer agrees with the description of the material (gsm, widths and quantities)<br/>
+                                Payment of tariffs and VAT are paid by the importer, costs for delays caused in port are paid by the importer
                             </p>
 
                             <br/>
                             <p>
                                 <strong>
-                                    Observaciones:
+                                    Observations:
                                 </strong>
                                 <br/><span t-field="o.note"/>
                             </p>
@@ -168,7 +168,15 @@
 
                     </div>
                 </div>
-            </t>
+            
         </t>
     </template>
+    
+    <template id="reporte_sale_order">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="solupaper.reporte_sale_order_document" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>    
 </odoo>

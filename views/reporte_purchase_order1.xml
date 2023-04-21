@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="reporte_purchase_order1">
+    <template id="reporte_purchase_order1_document">
        <t t-call="web.html_container">
            <t t-set="data_report_margin_top" t-value="12"/>
            <t t-set="data_report_header_spacing" t-value="4"/>
-            <t t-foreach="docs" t-as="o">
+           <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
+
                 <div class="article">
                     <div class="page" style="font-size:16px">
 
@@ -14,7 +15,7 @@
                                     <strong><u><span t-field="o.company_id.name"/></u></strong><br/>
                                     <span t-field="o.company_id.city"/>, <span t-field="o.company_id.state_id.name"/>, <span t-field="o.company_id.country_id.name"/><br/>
                                     <span t-field="o.company_id.street"/>, <span t-field="o.company_id.street2"/><br/>
-                                    Teléfono: <span t-field="o.company_id.phone"/><br/>
+                                    Phone: <span t-field="o.company_id.phone"/><br/>
                                     <span t-field="o.company_id.vat"/>
 
                                 </p>
@@ -29,7 +30,7 @@
                         <div style="height:25px"/>
 
                         <div class="izquierda" style="float:left;width:500px">
-                            <p><strong><u>Número de orden: <span t-field="o.sale_order_id.po_customer"/></u></strong></p>
+                            <p><strong><u>Number of order: <span t-field="o.sale_order_id.po_customer"/></u></strong></p>
                         </div>
                         <div class="clearfix"/>
 
@@ -62,23 +63,23 @@
                                   </tr>
                                   <tr>
 
-                                      <td style="text-align:right;width:150px">Puerto:</td>
+                                      <td style="text-align:right;width:150px">Port:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.puerto_origen"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Fecha:</td>
+                                      <td style="text-align:right;width:150px">Date:</td>
                                       <td style="text-align:left;width:200px"><span t-field="o.date_order"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Requerido:</td>
+                                      <td style="text-align:right;width:150px">Required:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.sale_order_id.requerido"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Moneda:</td>
+                                      <td style="text-align:right;width:150px">Currency:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.currency_id.name"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Días de crédito:</td>
+                                      <td style="text-align:right;width:150px">Credit days:</td>
                                       <td style="text-align:left;width:150px"><span t-field="o.payment_term_id.name"/></td>
                                   </tr>
                               </table>
@@ -87,7 +88,7 @@
                         <div class="izquierda" style="float:left;">
                             <table style="margin: 0px auto;width:100%">
                                 <tr>
-                                    <td style="text-align:center; width:300px">VENDEDOR</td>
+                                    <td style="text-align:center; width:300px">SELLER</td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:center;height:100px"><span t-field="o.partner_id.name"/></td>
@@ -100,10 +101,10 @@
                         <div class="tabla">
                           <table style="margin: 0px auto;width:100%">
                               <tr>
-                                  <td style="text-align:center;">Descripción</td>
-                                  <td style="text-align:center;">Cantidad MT</td>
-                                  <td style="text-align:center;">Precio/TM</td>
-                                  <td style="text-align:center;">Valor Total</td>
+                                  <td style="text-align:center;">Description</td>
+                                  <td style="text-align:center;">Quantity MT</td>
+                                  <td style="text-align:center;">Price/TM</td>
+                                  <td style="text-align:center;">Full Value</td>
                               </tr>
 
                               <t t-foreach="o.order_line" t-as="line">
@@ -117,7 +118,7 @@
                               <tr>
                                   <td></td>
                                   <td></td>
-                                  <td style="text-align:center;">Descuento</td>
+                                  <td style="text-align:center;">Discount</td>
                                   <td style="text-align:center;"><span t-field="o.descuento"/>%</td>
                               </tr>
                               <tr>
@@ -132,20 +133,20 @@
                         <div style="height:25px"/>
                         <div class="condiciones">
                             <p>
-                                <strong>Condiciones y Terminos:</strong><br/>
-                                Puerto destino: <span t-field="o.sale_order_id.puerto"/><br/>
-                                Cliente: <span t-field="o.sale_order_id.partner_id.name"/><br/>
-                                Orden de compra del cliente: <span t-field="o.sale_order_id.po_customer_name"/><br/>
+                                <strong>Conditions and Terms:</strong><br/>
+                                Destination port: <span t-field="o.sale_order_id.puerto"/><br/>
+                                Customer: <span t-field="o.sale_order_id.partner_id.name"/><br/>
+                                customer purchase order: <span t-field="o.sale_order_id.po_customer_name"/><br/>
 
                             </p>
                             <p style="color:red">
                                 <strong>
-                                    **Por Favor asegurar que el contenedor se carga lo mas cercano a 25 Ton**<br/>
-                                    **El material debe cumplir con las caracteristicas tecnicas **<br/>
-                                    ** Las bobinas deben de venir envueltas en papel plastico para repelar el agua**<br/>
-                                    ** Requerimos certificado de fumigacion de las paletas, si las bobinas van sobre paletas de madera**<br/>
-                                    Es necesario que nos envien fotos antes de cargar el contenedor de la parte de adentro, para tener soporte<br/>
-                                    de que no hay ningun dano en el mismo y evitar cargos en destino por problemas ocacionados a el contenedor
+                                    **Please ensure that the container is loaded as close to 25 Ton**<br/>
+                                    **The material must comply with the technical characteristics **<br/>
+                                    ** The coils must come wrapped in plastic paper to repel water**<br/>
+                                    ** We require a fumigation certificate for the pallets, if the coils go on wooden pallets**<br/>
+                                    It is necessary that you send us photos before loading the container from the inside, to have support<br/>
+                                    that there is no damage to it and avoid charges at destination for problems caused to the container
                                 </strong>
                             </p>
                         </div>
@@ -161,7 +162,15 @@
 
                     </div>
                 </div>
-            </t>
+
         </t>
     </template>
+    
+    <template id="reporte_purchase_order1">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="solupaper.reporte_purchase_order1_document" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>    
 </odoo>
