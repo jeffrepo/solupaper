@@ -217,7 +217,7 @@ msgstr ""
 "                                Los cargos por demora en el puerto son responsabilidad del comprador si se incurre en alguno.\n"
 "                                <br/>Los pagos de impuestos, aranceles y nacionalización de la carga no están incluidos en el precio final <br/>\n"
 "\n"
-"                                <br/>a aceptación de esta proforma implica que el comprador está de acuerdo con la descripción del material (gsm, anchos y cantidades)<br/>\n"
+"                                <br/>La aceptación de esta proforma implica que el comprador está de acuerdo con la descripción del material (gsm, anchos y cantidades)<br/>\n"
 "                                El pago de aranceles e IVA corre a cargo del importador, los costos por demoras ocasionadas en puerto corren a cargo del importador"
 
 #. module: solupaper
