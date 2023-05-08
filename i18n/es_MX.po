@@ -1,0 +1,963 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* solupaper
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-02 17:58+0000\n"
+"PO-Revision-Date: 2023-05-02 17:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: solupaper
+#: model:ir.model.fields.selection,name:solupaper.selection__solupaper_logistica__type_container__a
+msgid " 20' "
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields.selection,name:solupaper.selection__solupaper_logistica__days_free__b
+msgid "14"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields.selection,name:solupaper.selection__solupaper_logistica__days_free__c
+msgid "21"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields.selection,name:solupaper.selection__solupaper_logistica__type_container__d
+msgid "40 NOR"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields.selection,name:solupaper.selection__solupaper_logistica__type_container__b
+msgid "40'DC"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields.selection,name:solupaper.selection__solupaper_logistica__type_container__c
+msgid "40'HC"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid ""
+"<br/>\n"
+"                                    Phone:"
+msgstr ""
+"<br/>\n"
+"                                    Teléfono:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+msgid ""
+"<br/>\n"
+"                                Customer:"
+msgstr ""
+"<br/>\n"
+"                                Cliente:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+msgid ""
+"<br/>\n"
+"                                customer purchase order:"
+msgstr ""
+"<br/>\n"
+"                                orden de compra del cliente:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid ""
+"<br/>\n"
+"                            Date:"
+msgstr ""
+"<br/>\n"
+"                            Fecha:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid ""
+"<br/>\n"
+"                            Number of order:"
+msgstr ""
+"<br/>\n"
+"                            Número de orden:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid ""
+"<br/>\n"
+"                            Page: <br/>"
+msgstr ""
+"<br/>\n"
+"                            Página: <br/>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid ""
+"<br/>\n"
+"                     FEI:"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid ""
+"<br/>\n"
+"                     TELÉFONO:"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid ""
+"<font color=\"red\">\n"
+"                                Payment must be made on the date indicated in this invoice, otherwise a charge of 0.05% per day will be applied to the total amount due to penalties.\n"
+"                            </font>"
+msgstr ""
+"<font color=\"red\">\n"
+"                                El pago debe realizarse en la fecha indicada en esta factura, de lo contrario se aplicará un cargo del 0,05% por día sobre el monto total debido a las sanciones.\n"
+"                            </font>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+msgid ""
+"<strong>\n"
+"                                    **Please ensure that the container is loaded as close to 25 Ton**<br/>\n"
+"                                    **The material must comply with the technical characteristics **<br/>\n"
+"                                    ** The coils must come wrapped in plastic paper to repel water**<br/>\n"
+"                                    ** We require a fumigation certificate for the pallets, if the coils go on wooden pallets**<br/>\n"
+"                                    It is necessary that you send us photos before loading the container from the inside, to have support<br/>\n"
+"                                    that there is no damage to it and avoid charges at destination for problems caused to the container\n"
+"                                </strong>"
+msgstr ""
+"<strong>\n"
+"                                    **Asegúrese de que el contenedor se cargue lo más cerca posible de 25 toneladas**<br/>\n"
+"                                    **El material debe cumplir con las características técnicas **<br/>\n"
+"                                    ** Las bobinas deben venir envueltas en papel plástico para repeler el agua**<br/>\n"
+"                                    ** Requerimos certificado de fumigación de los palets, si las bobinas van sobre palets de madera**<br/>\n"
+"                                    Es necesario que nos envíe fotos antes de cargar el contenedor desde el interior, para tener soporte<br/>\n"
+"                                    que no haya daños en el mismo y evitar cargos en destino por problemas causados al contenedor\n"
+"                                </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid ""
+"<strong>\n"
+"                                    Observations:\n"
+"                                </strong>\n"
+"                                <br/>"
+msgstr ""
+"<strong>\n"
+"                                    Observaciones:\n"
+"                                </strong>\n"
+"                                <br/>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>ACCOUNT NUMBER: </strong>"
+msgstr "<strong>NÚMERO DE CUENTA: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>ACCOUNT TYPE: </strong>"
+msgstr "<strong>TIPO DE CUENTA: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>ADDRESS OF BENEFICIARY: </strong>"
+msgstr "<strong>DIRECCIÓN DEL BENEFICIARIO: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>AMOUNT</strong>"
+msgstr "<strong>CANTIDAD</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>BENEFICIARY:</strong>"
+msgstr "<strong>BENEFICIARIO:</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+msgid ""
+"<strong>Conditions and Terms:</strong><br/>\n"
+"                                Destination port:"
+msgstr ""
+"<strong>Condiciones y Términos:</strong><br/>\n"
+"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Customer ID</strong>"
+msgstr "<strong>Cliente ID</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>DESCRIPTION</strong>"
+msgstr "<strong>DESCRIPCIÓN</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid ""
+"<strong>Delivery terms and conditions:</strong><br/>\n"
+"                                Port delay charges are the buyer's responsibility if any are incurred.\n"
+"                                <br/>Payments of taxes, tariffs and nationalization of the load are not included in the final price <br/>\n"
+"\n"
+"                                <br/>Acceptance of this proforma agrees that the buyer agrees with the description of the material (gsm, widths and quantities)<br/>\n"
+"                                Payment of tariffs and VAT are paid by the importer, costs for delays caused in port are paid by the importer"
+msgstr ""
+"<strong>Términos y condiciones de entrega:</strong><br/>\n"
+"                                Los cargos por demora en el puerto son responsabilidad del comprador si se incurre en alguno.\n"
+"                                <br/>Los pagos de impuestos, aranceles y nacionalización de la carga no están incluidos en el precio final <br/>\n"
+"\n"
+"                                <br/>a aceptación de esta proforma implica que el comprador está de acuerdo con la descripción del material (gsm, anchos y cantidades)<br/>\n"
+"                                El pago de aranceles e IVA corre a cargo del importador, los costos por demoras ocasionadas en puerto corren a cargo del importador"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Due date</strong>"
+msgstr "<strong>Fecha de vencimiento</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Importer</strong>"
+msgstr "<strong>Importador</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>NAME OF THE BANK: </strong>"
+msgstr "<strong>NOMBRE DEL BANCO: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>NRO DE SWIFT: </strong>"
+msgstr "<strong>NRO DE SWIFT: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid ""
+"<strong>Note: </strong>Claims for defects, shipping errors or missing "
+"material will be considered only if made within the first 10 days of "
+"receiving the merchandise. The responsibility of SOLUPAPER, LLC, is limited "
+"to the replacement in case the material has defects.<br/>"
+msgstr ""
+"<strong>Nota: </strong>Reclamaciones por defectos, errores de envío o faltantes "
+"el material será considerado sólo si se hace dentro de los primeros 10 días de "
+"recibiendo la mercadería. La responsabilidad de SOLUPAPER, LLC, se limita "
+"a la reposición en caso de que el material presente defectos.<br/>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Observation: </strong>"
+msgstr "<strong>Observaciones: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>PHONE: </strong>"
+msgstr "<strong>TELÉFONO: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>PLEASE MAKE PAYMENT BY BANK TRANSFER TO:</strong>"
+msgstr "<strong>OR FAVOR REALICE EL PAGO POR TRANSFERENCIA BANCARIA A:</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>PRICE</strong>"
+msgstr "<strong>PRECIO</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "<strong>Proform Invoice</strong>"
+msgstr "<strong>Factura Proforma</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>ROLLS/PALLETS</strong>"
+msgstr "<strong>ROLLOS/PALETS</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>ROUTING NUMBER: </strong>"
+msgstr "<strong>NÚMERO DE RUTA: </strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Sales representative</strong>"
+msgstr "<strong>Representante de ventas</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Sent via SOLUPAPER</strong>"
+msgstr "<strong>Enviado a través de SOLUPAPER</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Subtotal</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>TOTAL PRICE</strong>"
+msgstr "<strong>PRECIO TOTAL</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Total Gross Weight (TM)</strong>"
+msgstr "<strong>Peso bruto total (TM)</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Total Net Weight (TM)</strong>"
+msgstr "<strong>Peso Neto Total (TM)</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Total amount</strong>"
+msgstr "<strong>Cantidad total</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>UM</strong>"
+msgstr "<strong>UM</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>customer order</strong>"
+msgstr "<strong>pedido del cliente</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>material from</strong>"
+msgstr "<strong>material de</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "<strong>payment term</strong>"
+msgstr "<strong>plazo de pago</strong>"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "ALSO NOTIFY"
+msgstr "TAMBIÉN NOTIFICA"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__also_notify
+msgid "Also notify"
+msgstr También notifica
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__booking_nbr
+msgid "BOOKING NBR"
+msgstr "NÚMERO DE RESERVA"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "BOOKING NBR:"
+msgstr "NÚMERO DE RESERVA:"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__beneficiario
+msgid "Beneficiario: "
+msgstr ""
+
+#. module: solupaper
+#: model:ir.actions.report,name:solupaper.action_report_solupaper_logistica
+msgid "Booking request"
+msgstr "Solicitud de reserva"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "CONSIGNEE"
+msgstr "CONSIGNATARIO"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "CONTAINER"
+msgstr "ENVASE"
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_solupaper_logistica
+msgid "Creado para llevar la logística"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_report_solupaper_reporte_solupaper_logistica__create_uid
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm__create_uid
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_report_solupaper_reporte_solupaper_logistica__create_date
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm__create_date
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Credit days:"
+msgstr "Días de crédito:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Currency:"
+msgstr "Divisa:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "DESCRIPTION OF CARGO"
+msgstr "DESCRIPCIÓN DE LA CARGA"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Date:"
+msgstr "Fecha:"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__fecha_logistica
+msgid "Date: "
+msgstr "Fecha:"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__days_free
+msgid "Days Free"
+msgstr "Días Gratis"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.view_solupaper_logistica_form
+msgid "Days free"
+msgstr "Días Gratis"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Description"
+msgstr "Descripción"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_purchase_order__descuento
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__descuento
+msgid "Descuento %"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__pais_destino_id
+msgid "Destination country"
+msgstr "Pais de destino"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__direccion_beneficiario
+msgid "Dirección del beneficiario"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Discount"
+msgstr "Descuento"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_report_solupaper_reporte_solupaper_logistica__display_name
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm__display_name
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: solupaper
+#: model:ir.actions.report,name:solupaper.action_report_solupaper_draft_bl
+msgid "Draft BL"
+msgstr "Borrador BL"
+
+#. module: solupaper
+#: model:ir.actions.report,name:solupaper.action_report_solupaper_circulacion_mercancias
+msgid "EUR1 draft "
+msgstr "Borrador de EUR1"
+
+#. module: solupaper
+#: model_terms:ir.actions.act_window,help:solupaper.action_customer_solupaper_logistica
+msgid "Empezar a crear algo de logística"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.actions.report,name:solupaper.account_solupaper_new_format
+msgid "Factura SOLUPAPER"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__requerido
+msgid "Fecha requerido"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__forma_envio
+msgid "Forma de envío"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__freight_supplier_id
+msgid "Freigth Forward Information"
+msgstr "Información de transporte de carga"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Full Value"
+msgstr "Valor total"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "GROSS"
+msgstr "BRUTO"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "GROSS WEIGHT"
+msgstr "PESO BRUTO"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_report_solupaper_reporte_solupaper_logistica__id
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm__id
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__id
+msgid "ID"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Incoterm:"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.view_company_form_extra_solupaper
+msgid "Información extra"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "Invoice:"
+msgstr "Factura"
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento de diario"
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte de diario"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_report_solupaper_reporte_solupaper_logistica____last_update
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm____last_update
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_report_solupaper_reporte_solupaper_logistica__write_uid
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm__write_uid
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__write_uid
+msgid "Last Updated by"
+msgstr "Última modificación el"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_report_solupaper_reporte_solupaper_logistica__write_date
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm__write_date
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__write_date
+msgid "Last Updated on"
+msgstr "Última modificación el"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.view_solupaper_logistica_tree
+msgid "Logistica"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.view_solupaper_logistica_form
+msgid "Logistica algo"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "Logo"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.ui.menu,name:solupaper.menu_solupaper_logistica
+msgid "Logística"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "M3"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "MARKS"
+msgstr "MARCAS"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "MEASUREM"
+msgstr "MEDIDA"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_account_bank_statement_line__material_proveniente
+#: model:ir.model.fields,field_description:solupaper.field_account_move__material_proveniente
+#: model:ir.model.fields,field_description:solupaper.field_account_payment__material_proveniente
+msgid "Material proveniente de: "
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__movement_type
+msgid "Movement type"
+msgstr "Tipo de movimiento"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "NET"
+msgstr "NETO"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__notify
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "NOTIFY"
+msgstr "NOTIFICAR"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__nombre_banco
+msgid "Nombre del banco"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_incoterm__name
+msgid "Nombre incoterm"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__numero_swift
+msgid "Nro de swift"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+msgid "Number of order:"
+msgstr "Número de orden:"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__numero_cuenta
+msgid "Número de cuenta: "
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__po_customer
+msgid "Número de orden referencia"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.actions.report,name:solupaper.solupaper_purchase_order1
+msgid "Orden de compra"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__po_customer_name
+msgid "Orden de compra cliente"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__pais_origen_id
+msgid "Origin country"
+msgstr "País de origen"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "PLACE OF DELIVERY"
+msgstr "LUGAR DE ENTREGA"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.view_company_form_extra_solupaper
+msgid "POR FAVOR HACER PAGO POR TRANSFERENCIA BANCARIA A:"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__transferencia_a
+msgid "POR FAVOR HACER PAGO POR TRANSFERENCIA BANCARIA A: "
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "PORT OF DISCHARGE"
+msgstr "PUERTO DE DESCARGA"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "PORT OF LOADING"
+msgstr "PUERTO DE CARGA"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__place_deliver
+msgid "Place of  Delivery in Case of  DAP"
+msgstr "Lugar de Entrega en Caso de DAP"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Port:"
+msgstr "Puerto:"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__price_quoted
+msgid "Price Quoted"
+msgstr "Precio Cotizado"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Price/TM"
+msgstr "Precio/TM"
+
+#. module: solupaper
+#: model:ir.actions.report,name:solupaper.action_report_saleorder_solupaper
+#: model:ir.model.fields,field_description:solupaper.field_purchase_order__sale_order_id
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__proforma_id
+msgid "Proforma"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__puerto
+msgid "Puerto"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__puerto_destino
+msgid "Puerto destino"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_purchase_order__puerto_origen
+msgid "Puerto origen "
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_purchase_order
+msgid "Purchase Order"
+msgstr "Orden de compra"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__purchase_order
+msgid "Purchase order"
+msgstr "Orden de compra"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "QUANT ROLLS"
+msgstr "ROLLOS CANT."
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+msgid "Quantity TM"
+msgstr "Cantidad TM"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Quantity TM"
+msgstr "Cantidad TM"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__quantity_containers
+msgid "Quantity of containers"
+msgstr "Cantidad de contenedores"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Required:"
+msgstr "Requerido:"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_account_move_line__rollos_paletas
+msgid "Rollos / Paletas"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__routing_number
+msgid "Routing number: "
+msgstr "Número de ruta:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "SEAL 1:"
+msgstr "SELLO 1:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+msgid "SELLER"
+msgstr "VENDEDOR"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "SHIPPER"
+msgstr "EXPEDIDOR"
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_sale_order
+msgid "Sales Order"
+msgstr "Orden de venta"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_purchase_order__solupaper_incoterm_id
+#: model:ir.model.fields,field_description:solupaper.field_sale_order__solupaper_incoterm_id
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__incoterm_id
+msgid "Solupaper incoterm"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.actions.act_window,name:solupaper.action_customer_solupaper_logistica
+#: model:ir.ui.menu,name:solupaper.menu_solupaper_root
+msgid "Solupaper logistica"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.ui.menu,name:solupaper.menu_customer_solupaper_logistica
+msgid "Solupaper logistica personalizado"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "TARE:"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "TEL:"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__telefono
+msgid "Teléfono"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_res_company__tipo_cuenta
+msgid "Tipo de cuenta: "
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_purchase_order1_document
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "Total"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_account_bank_statement_line__total_peso_bruto
+#: model:ir.model.fields,field_description:solupaper.field_account_move__total_peso_bruto
+#: model:ir.model.fields,field_description:solupaper.field_account_payment__total_peso_bruto
+msgid "Total Peso Bruto (TM)"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__type_container
+msgid "Type Container"
+msgstr "Tipo Contenedor"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.solupaper_draft_bl_report_document
+msgid "VESSEL AND VOY"
+msgstr "BUQUE Y VOY"
+
+#. module: solupaper
+#: model:ir.model.fields,field_description:solupaper.field_solupaper_logistica__vesse_voy
+msgid "VESSEL and VOY"
+msgstr "BUQUE y VOY"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.reporte_sale_order_document
+msgid "customer purchase order:"
+msgstr "orden de compra del cliente:"
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_report_solupaper_report_account_solupaper
+msgid "report.solupaper.report_account_solupaper"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_report_solupaper_reporte_purchase_order1
+msgid "report.solupaper.reporte_purchase_order1"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_report_solupaper_reporte_solupaper_logistica
+msgid "report.solupaper.reporte_solupaper_logistica"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_reporte_solupaper_logistica
+msgid "reporte.solupaper.logistica"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_rolsa_abstract_account_move_invoice
+msgid "rolsa.abstract.account_move_invoice"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_rolsa_abstract_reporte_purchase_order
+msgid "rolsa.abstract.reporte_purchase_order"
+msgstr ""
+
+#. module: solupaper
+#: model:ir.model,name:solupaper.model_solupaper_incoterm
+msgid "solupaper.incoterm"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "| Currency:"
+msgstr "| Divisa:"
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "| Intercorm:"
+msgstr ""
+
+#. module: solupaper
+#: model_terms:ir.ui.view,arch_db:solupaper.report_account_solupaper_document
+msgid "| Port:"
+msgstr "| Puerto:"
