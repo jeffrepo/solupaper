@@ -6,7 +6,7 @@
          <t t-set="data_report_margin_top" t-value="12"/>
          <t t-set="data_report_header_spacing" t-value="4"/>
          <t t-set="o" t-value="o.with_context(lang=o.proforma_id.partner_id.lang)" />
-         
+
            <div class="article">
              <div class="page">
 
@@ -206,22 +206,19 @@
 
 
            </div>
-         
+
 
          <div class="footer">
 
          </div>
        </t>
     </template>
-    
+
     <template id="solupaper_draft_bl_report">
         <t t-call="web.html_container">
-            <t t-set="data_report_margin_top" t-value="12"/>
-            <t t-set="data_report_header_spacing" t-value="9"/>
-            <t t-set="data_report_dpi" t-value="110"/>            
             <t t-foreach="docs" t-as="o">
                 <t t-call="solupaper.solupaper_draft_bl_report_document" t-lang="o.proforma_id.partner_id.lang"/>
             </t>
         </t>
-    </template>     
+    </template>
 </odoo>

@@ -9,7 +9,10 @@
                 <div class="article">
                     <div class="page" style="font-size:16px">
 
-                        <div class="derecha" style="float:right;font-size:18px">
+                        <div class="izquierda" style="float:left;display: inline-block;width:50%;text-align:left;vertical-align: middle;">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:175px" alt="Logo"/>
+                        </div>
+                        <div class="derecha" style="float:left;font-size:18px;display: inline-block;width:50%;text-align:center;">
                             <center>
                                 <p>
                                     <strong><u><span t-field="o.company_id.name"/></u></strong><br/>
@@ -22,9 +25,7 @@
                             </center>
                         </div>
 
-                        <div class="izquierda" style="float:left;">
-                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:175px" alt="Logo"/>
-                        </div>
+
                         <div class="clearfix"/>
 
                         <div style="height:25px"/>
@@ -58,29 +59,29 @@
                               <table style="margin: 0px auto;width:100%">
                                   <tr>
 
-                                      <td style="text-align:right;width:150px">Incoterm:</td>
-                                      <td style="text-align:left;width:150px"><span t-esc="o.solupaper_incoterm_id.name"/></td>
+                                      <td style="text-align:right;width:150px;text-align: center; vertical-align: middle;">Incoterm:</td>
+                                      <td style="text-align:left;width:150px;text-align: center; vertical-align: middle;"><span t-esc="o.solupaper_incoterm_id.name"/></td>
                                   </tr>
                                   <tr>
 
-                                      <td style="text-align:right;width:150px">Port:</td>
-                                      <td style="text-align:left;width:150px"><span t-field="o.puerto_origen"/></td>
+                                      <td style="text-align:right;width:150px;text-align: center; vertical-align: middle;">Port:</td>
+                                      <td style="text-align:left;width:150px;text-align: center; vertical-align: middle;"><span t-field="o.puerto_origen"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Date:</td>
-                                      <td style="text-align:left;width:200px"><span t-field="o.date_order"/></td>
+                                      <td style="text-align:right;width:150px;text-align: center; vertical-align: middle;">Date:</td>
+                                      <td style="text-align:left;width:200px;text-align: center; vertical-align: middle;"><span t-field="o.date_order"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Required:</td>
-                                      <td style="text-align:left;width:150px"><span t-field="o.sale_order_id.requerido"/></td>
+                                      <td style="text-align:right;width:150px;text-align: center; vertical-align: middle;">Required:</td>
+                                      <td style="text-align:left;width:150px;text-align: center; vertical-align: middle;"><span t-field="o.sale_order_id.requerido"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Currency:</td>
-                                      <td style="text-align:left;width:150px"><span t-field="o.currency_id.name"/></td>
+                                      <td style="text-align:right;width:150px;text-align: center; vertical-align: middle;">Currency:</td>
+                                      <td style="text-align:left;width:150px;text-align: center; vertical-align: middle;"><span t-field="o.currency_id.name"/></td>
                                   </tr>
                                   <tr>
-                                      <td style="text-align:right;width:150px">Credit days:</td>
-                                      <td style="text-align:left;width:150px"><span t-field="o.payment_term_id.name"/></td>
+                                      <td style="text-align:right;width:150px;text-align: center; vertical-align: middle;">Credit days:</td>
+                                      <td style="text-align:left;width:150px;text-align: center; vertical-align: middle;"><span t-field="o.payment_term_id.name"/></td>
                                   </tr>
                               </table>
                             </center>
@@ -101,15 +102,15 @@
                         <div class="tabla">
                           <table style="margin: 0px auto;width:100%">
                               <tr>
-                                  <td style="text-align:center;">Description</td>
-                                  <td style="text-align:center;">Quantity MT</td>
-                                  <td style="text-align:center;">Price/TM</td>
-                                  <td style="text-align:center;">Full Value</td>
+                                  <td style="text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Description</strong></td>
+                                  <td style="text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Quantity MT</strong></td>
+                                  <td style="text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Price/TM</strong></td>
+                                  <td style="text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Full Value</strong></td>
                               </tr>
 
                               <t t-foreach="o.order_line" t-as="line">
                                   <tr>
-                                      <td style="text-align:left"><span t-field="line.name"/></td>
+                                      <td style="text-align: center; vertical-align: middle;"><span t-field="line.name"/></td>
                                       <td style="text-align:center;"><span t-field="line.product_uom_qty"/></td>
                                       <td style="text-align:center;"><span t-field="line.price_unit"/></td>
                                       <td style="text-align:center;"><span t-field="line.price_total"/></td>
@@ -131,7 +132,7 @@
                         </div>
 
                         <div style="height:25px"/>
-                        <div class="condiciones">
+                        <div class="condiciones" style="font-size:10px">
                             <p>
                                 <strong>Conditions and Terms:</strong><br/>
                                 Destination port: <span t-field="o.sale_order_id.puerto"/><br/>
@@ -165,15 +166,14 @@
 
         </t>
     </template>
-    
+
     <template id="reporte_purchase_order1">
         <t t-call="web.html_container">
             <t t-set="data_report_margin_top" t-value="12"/>
             <t t-set="data_report_header_spacing" t-value="9"/>
-            <t t-set="data_report_dpi" t-value="110"/>
             <t t-foreach="docs" t-as="o">
                 <t t-call="solupaper.reporte_purchase_order1_document" t-lang="o.partner_id.lang"/>
             </t>
         </t>
-    </template>    
+    </template>
 </odoo>

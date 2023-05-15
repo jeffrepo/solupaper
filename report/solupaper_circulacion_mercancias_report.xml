@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="solupaper_circulacion_mercancias_report">
+    <template id="solupaper_circulacion_mercancias_report_document">
        <t t-call="web.html_container">
 
          <t t-set="data_report_margin_top" t-value="12"/>
          <t t-set="data_report_header_spacing" t-value="4"/>
          <t t-set="o" t-value="o.with_context(lang=o.proforma_id.partner_id.lang)" />
-         
+
            <div class="article">
                <div class="page">
 
@@ -93,7 +93,7 @@
                            <t t-if="o.purchase_order.order_line">
                              <t t-foreach="o.purchase_order.order_line" t-as="line">
                                 <tr style="border: 0">
-                                  <td style="text-align:center; border: 0">
+                                  <td style="text-align: center; vertical-align: middle; border: 0">
                                     <span t-esc="line.name"/>
                                   </td>
                                 </tr>
@@ -116,7 +116,7 @@
                        <u>
                          11. CUSTOMS VISA.
                        </u>
-                       <p style="text-align:center">Certified Declaration of Conformity<br/>
+                       <p style="text-align: center; vertical-align: middle;">Certified Declaration of Conformity<br/>
                        export document (2)<br/>
                        Model……………….. No………………..<br/>
                        of the………………………………………………….<br/>
@@ -137,8 +137,8 @@
 
                          <table style="width:90%; border: 0px solid #AED6F1; border-style: none;" ALIGN="center">
                            <tr style="text-align:center">
-                             <td>In………….</td>
-                             <td>to………….</td>
+                             <td style="text-align: center; vertical-align: middle;">In………….</td>
+                             <td style="text-align: center; vertical-align: middle;">to………….</td>
                            </tr>
                          </table>
 
@@ -154,27 +154,20 @@
 
                  </div>
 
-
-
-
-
-
-
                </div>
            </div>
-         
+
 
        </t>
     </template>
-    
+
     <template id="solupaper_circulacion_mercancias_report">
         <t t-call="web.html_container">
             <t t-set="data_report_margin_top" t-value="12"/>
             <t t-set="data_report_header_spacing" t-value="9"/>
-            <t t-set="data_report_dpi" t-value="110"/>
             <t t-foreach="docs" t-as="o">
                 <t t-call="solupaper.solupaper_circulacion_mercancias_report_document" t-lang="o.proforma_id.partner_id.lang"/>
             </t>
         </t>
-    </template>     
+    </template>
 </odoo>

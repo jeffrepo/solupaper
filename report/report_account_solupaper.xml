@@ -5,7 +5,7 @@
            <t t-set="data_report_margin_top" t-value="12"/>
            <t t-set="data_report_header_spacing" t-value="4"/>
            <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)" />
-            
+
                 <div class="article">
                     <div class="page" style="font-size:16px">
 
@@ -120,18 +120,18 @@
                             }
                         </style>
 
-                        <div style="height:auto; width:100%; padding-bottom:5px; display:flex; overflow:auto">
-                          <div style="float:left; width:50%">
-                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:175px; overflow: hidden" alt="Logo"/>
-                          </div>
-                          <div style="float:right; width:50%; height:auto">
+                        <div style="float:left;display: inline-block;width:50%;text-align:left;vertical-align: middle;">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:175px;" alt="Logo"/>
+                        </div>
+                        <div style="float:left;font-size:18px;display: inline-block;width:50%;text-align:left;">
                             Invoice: <span t-if="o.name" t-field="o.name"/>| Currency: <span t-if="o.currency_id.name" t-field="o.currency_id.name"/><br/>
                             Number of order: <span t-if="values['n_orden']" t-esc="values['n_orden']"/>| Intercorm: <span t-if="values['intercorm']" t-esc="values['intercorm']"/><br/>
                             Date: <span t-if="o.invoice_date" t-field="o.invoice_date"/>| Port: <span t-if="values['puerto']" t-esc="values['puerto']"/><br/>
                             Page: <br/>
-                          </div>
                         </div>
                         <br/>
+                        <div class="clearfix"/>
+                        <div style="height:25px"/>
                         <div>
                           <h4><strong><u><span t-field="o.company_id.name"/></u></strong></h4>
                           <span t-if="o.company_id.street" t-esc="o.company_id.street"/><br/>
@@ -145,7 +145,7 @@
 
                             <div class="div_titulos" style="border-top:3px">
                                 <div class="div_izquierdo_titulo">
-                                    <div class="div_izquierdo_titulo_izquierda">
+                                    <div class="div_izquierdo_titulo_izquierda" style="text-align: center; vertical-align: middle;">
                                         <strong>Importer</strong>
                                     </div>
                                 </div>
@@ -154,7 +154,7 @@
 
                             <div class="div_general" style="height:auto">
 
-                                <div class="div_izquierdo" style="width:90%;height:auto">
+                                <div class="div_izquierdo" style="width:90%;height:auto;text-align: center; vertical-align: middle;">
                                     <span t-if="o.partner_id" t-field="o.partner_id.name"><br/></span>
                                     <span t-if="o.partner_id.street" t-field="o.partner_id.street"/> <span t-if="o.partner_id.street2" t-field="o.partner_id.street2"/><br/>
                                     <span t-if="o.partner_id.vat" t-field="o.partner_id.vat"/>
@@ -168,14 +168,14 @@
 
                             <div class="div_titulos" style="border-top:3px">
                                 <div class="div_izquierdo_titulo">
-                                    <div class="div_izquierdo_titulo_izquierda">
+                                    <div class="div_izquierdo_titulo_izquierda" style="text-align: center; vertical-align: middle;">
                                         <strong>Importer</strong>
                                     </div>
                                 </div>
 
                             </div>
 
-                            <div class="div_general" style="height:auto">
+                            <div class="div_general" style="height:auto;text-align: center; vertical-align: middle;background-color:  #d9d9d9;">
 
                                 <div class="div_izquierdo" style="width:90%;height:auto">
                                   <span t-if="o.partner_id" t-field="o.partner_id.name"><br/></span>
@@ -191,37 +191,37 @@
                         <table style="width:100%; border:1; align:center">
 
                             <tr align="center">
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>Customer ID</strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>customer order</strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>payment term</strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>Due date</strong>
                                 </td>
                             </tr>
 
                             <tr align="center">
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong><span t-if="values['n_orden']" t-esc="values['n_orden']"/></strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong><span t-if="values['orden_cliente']" t-esc="values['orden_cliente']"/></strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong><span t-if="values['plazo_pago']" t-esc="values['plazo_pago']"/></strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong><span t-if="o.invoice_date_due" t-field="o.invoice_date_due"/></strong>
                                 </td>
                             </tr>
@@ -231,23 +231,23 @@
                         <table style="width:100%; border:1; align:center">
 
                             <tr align="center">
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>Sales representative</strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>material from</strong>
                                 </td>
 
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>Sent via SOLUPAPER</strong>
                                 </td>
                             </tr>
 
                             <tr align="center">
-                                <td><span t-if="values['representate_venta']" t-esc="values['representate_venta']"/></td>
-                                <td><span t-if="o.material_proveniente" t-field="o.material_proveniente"/><br/></td>
-                                <td></td>
+                                <td style="text-align: center; vertical-align: middle;"><span t-if="values['representate_venta']" t-esc="values['representate_venta']"/></td>
+                                <td style="text-align: center; vertical-align: middle;"><span t-if="o.material_proveniente" t-field="o.material_proveniente"/><br/></td>
+                                <td style="text-align: center; vertical-align: middle;"></td>
                             </tr>
 
                         </table>
@@ -257,27 +257,27 @@
                         <table style="width:100%; align:center; border:none; border-bottom: 0px" >
 
                             <tr align="center" style="border:1;" >
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;background-color:  #d9d9d9;">
                                     <strong>AMOUNT</strong>
                                 </td>
 
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;background-color:  #d9d9d9;">
                                     <strong>UM</strong>
                                 </td>
 
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;background-color:  #d9d9d9;">
                                     <strong>ROLLS/PALLETS</strong>
                                 </td>
 
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;background-color:  #d9d9d9;">
                                     <strong>DESCRIPTION</strong>
                                 </td>
 
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;background-color:  #d9d9d9;">
                                     <strong>PRICE</strong>
                                 </td>
 
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;background-color:  #d9d9d9;">
                                     <strong>TOTAL PRICE</strong>
                                 </td>
                             </tr>
@@ -285,12 +285,12 @@
 
                             <t t-foreach="o.invoice_line_ids" t-as="line">
                                 <tr style="border:1;">
-                                    <td style="text-align:center;"><span t-field="line.quantity" t-value="line.quantity"/></td>
-                                    <td style="text-align:center"><span t-field="line.product_uom_id.name"/></td>
-                                    <td><span t-field="line.rollos_paletas"/></td>
-                                    <td style="text-align:left"><span t-field="line.name"/></td>
-                                    <td style="text-align:right;"><span t-field="line.price_unit"/></td>
-                                    <td style="text-align:right;"><span t-field="line.price_total"/></td>
+                                    <td style="text-align: center; vertical-align: middle;"><span t-field="line.quantity" t-value="line.quantity"/></td>
+                                    <td style="text-align: center; vertical-align: middle;"><span t-field="line.product_uom_id.name"/></td>
+                                    <td style="text-align: center; vertical-align: middle;"><span t-field="line.rollos_paletas"/></td>
+                                    <td style="text-align: center; vertical-align: middle;"><span t-field="line.name"/></td>
+                                    <td style="text-align: center; vertical-align: middle;"><span t-field="line.price_unit"/></td>
+                                    <td style="text-align: right;padding-right:10px"><span t-field="line.price_total"/></td>
                                 </tr>
                             </t>
 
@@ -298,17 +298,17 @@
                             <tr >
                                 <td style="border:none">
                                 </td>
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;">
                                     <strong>Total</strong>
                                 </td>
                                 <td>
                                 </td>
                                 <td style="border:none;">
                                 </td>
-                                <td style="border:1;">
+                                <td style="border:1;text-align: center; vertical-align: middle;">
                                     <strong>Subtotal</strong>
                                 </td>
-                                <td style="text-align:right;">
+                                <td style="text-align: right;padding-right:10px">
                                     <span t-if="o.amount_untaxed_signed" t-field="o.amount_untaxed_signed"/>
                                 </td>
                             </tr>
@@ -322,10 +322,10 @@
                                 </td>
                                 <td style="border:none;">
                                 </td>
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>Total amount</strong>
                                 </td>
-                                <td style="text-align:right;">
+                                <td style="text-align: right;padding-right:10px">
                                     <span t-if="o.amount_total_signed" t-field="o.amount_total_signed"/>
                                 </td>
                             </tr>
@@ -336,17 +336,17 @@
 
                         <table style="width:30%">
                             <tr>
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>Total Net Weight (TM)</strong>
                                 </td>
-                                <td style="text-align:right;"><span t-if="values" t-esc="values['total_peso_neto']"/></td>
+                                <td style="text-align: center; vertical-align: middle;"><span t-if="values" t-esc="values['total_peso_neto']"/></td>
                             </tr>
 
                             <tr>
-                                <td>
+                                <td style="text-align: center; vertical-align: middle;">
                                     <strong>Total Gross Weight (TM)</strong>
                                 </td>
-                                <td style="text-align:right;"><span t-if="o.total_peso_bruto" t-field="o.total_peso_bruto"/></td>
+                                <td style="text-align: center; vertical-align: middle;"><span t-if="o.total_peso_bruto" t-field="o.total_peso_bruto"/></td>
                             </tr>
                         </table>
 
@@ -357,23 +357,23 @@
                         </div>
 
                         <table style="width:100%; border:none;">
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>PLEASE MAKE PAYMENT BY BANK TRANSFER TO:</strong>
                                 </td>
-                                <td>
+                                <td style="text-align: left;padding-left: 5px; vertical-align: middle;">
                                     <span t-if="o.company_id.transferencia_a" t-field="o.company_id.transferencia_a"/>
                                 </td>
                             </tr>
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>BENEFICIARY:</strong>
                                 </td>
                                 <td>
                                     <span t-if="o.company_id.beneficiario" t-field="o.company_id.beneficiario"/></td>
                             </tr>
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>NAME OF THE BANK: </strong>
                                 </td>
                                 <td>
@@ -381,56 +381,56 @@
                                 </td>
                             </tr>
 
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>ACCOUNT NUMBER: </strong>
                                 </td>
-                                <td>
+                                <td style="text-align: left;padding-left: 5px; vertical-align: middle;">
                                     <span t-if="o.company_id.numero_cuenta" t-field="o.company_id.numero_cuenta"/>
                                 </td>
                             </tr>
 
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>ACCOUNT TYPE: </strong>
                                 </td>
-                                <td>
+                                <td style="text-align: left;padding-left: 5px; vertical-align: middle;">
                                     <span t-if="o.company_id.tipo_cuenta" t-field="o.company_id.tipo_cuenta"/>
                                 </td>
                             </tr>
 
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>ROUTING NUMBER: </strong>
                                 </td>
-                                <td>
+                                <td style="text-align: left;padding-left: 5px; vertical-align: middle;">
                                     <span t-if="o.company_id.routing_number" t-field="o.company_id.routing_number"/>
                                 </td>
                             </tr>
 
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>NRO DE SWIFT: </strong>
                                 </td>
-                                <td>
+                                <td style="text-align: left;padding-left: 5px; vertical-align: middle;">
                                     <span t-if="o.company_id.numero_swift" t-field="o.company_id.numero_swift"/>
                                 </td>
                             </tr>
 
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>ADDRESS OF BENEFICIARY: </strong>
                                 </td>
-                                <td>
+                                <td style="text-align: left;padding-left: 5px; vertical-align: middle;">
                                     <span t-if="o.company_id.direccion_beneficiario" t-field="o.company_id.direccion_beneficiario"/>
                                 </td>
                             </tr>
 
-                            <tr style="border:none;">
-                                <td>
+                            <tr style="border:none;text-align: left;padding-left: 5px; vertical-align: middle;">
+                                <td style="padding-left:10px;vertical-align: middle;">
                                     <strong>PHONE: </strong>
                                 </td>
-                                <td>
+                                <td style="text-align: left;padding-left: 5px; vertical-align: middle;">
                                     <span t-if="o.company_id.telefono" t-field="o.company_id.telefono"/>
                                 </td>
                             </tr>
@@ -445,11 +445,11 @@
                         </h4>
 
 
-                        <div style="padding-bottom:5px">
+                        <div style="padding-bottom:5px; font-size:10px">
                             <strong>Note: </strong>Claims for defects, shipping errors or missing material will be considered only if made within the first 10 days of receiving the merchandise. The responsibility of SOLUPAPER, LLC, is limited to the replacement in case the material has defects.<br/>
                         </div>
 
-                        <p>
+                        <p style="font-size:10px">
                             <font color="red">
                                 Payment must be made on the date indicated in this invoice, otherwise a charge of 0.05% per day will be applied to the total amount due to penalties.
                             </font>
@@ -458,18 +458,17 @@
 
                     </div>
                 </div>
-            
+
         </t>
     </template>
-    
+
     <template id="report_account_solupaper">
         <t t-call="web.html_container">
             <t t-set="data_report_margin_top" t-value="12"/>
             <t t-set="data_report_header_spacing" t-value="9"/>
-            <t t-set="data_report_dpi" t-value="110"/>            
             <t t-foreach="docs" t-as="o">
                 <t t-call="solupaper.report_account_solupaper_document" t-lang="o.partner_id.lang"/>
             </t>
         </t>
-    </template>     
+    </template>
 </odoo>

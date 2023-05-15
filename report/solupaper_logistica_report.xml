@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="solupaper_logistica_report">
+    <template id="solupaper_logistica_report_document">
        <t t-call="web.html_container">
 
          <t t-set="data_report_margin_top" t-value="12"/>
          <t t-set="data_report_header_spacing" t-value="4"/>
          <t t-set="o" t-value="o.with_context(lang=o.purchase_order.partner_id.lang)" />
-         
+
            <div class="article">
                <div class="page">
 
@@ -164,7 +164,7 @@
                    <div class="div_left_box">
 
                      <div class="div_logo_box" style="text-align:center">
-                       <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:70%;overflow: hidden" alt="Logo"/>
+                       <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="width:50%;overflow: hidden" alt="Logo"/>
                      </div>
                      <br/>
                      <div class="div_box_header_standard">
@@ -229,31 +229,31 @@
                        <div style="background:#D7DBDD; width:100%; text-align:center;border: 1px solid black">Type of Container:</div>
                        <table style="width:100%;height:100%;border: 1px">
                          <tr style="text-align:center">
-                           <td>20'</td>
-                           <td>40'DC</td>
-                           <td>40'HC</td>
-                           <td>40'NOR</td>
+                           <td style="text-align: center; vertical-align: middle;">20'</td>
+                           <td style="text-align: center; vertical-align: middle;">40'DC</td>
+                           <td style="text-align: center; vertical-align: middle;">40'HC</td>
+                           <td style="text-align: center; vertical-align: middle;">40'NOR</td>
                          </tr>
                          <tr style="text-align:center">
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              <t t-if="o.type_container == 'a'">
                                X
                              </t>
                            </td>
 
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              <t t-if="o.type_container == 'b'">
                                X
                              </t>
                            </td>
 
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              <t t-if="o.type_container == 'c'">
                                X
                              </t>
                            </td>
 
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              <t t-if="o.type_container == 'd'">
                                X
                              </t>
@@ -358,7 +358,7 @@
                            <t t-if="o.purchase_order.order_line">
                              <t t-foreach="o.purchase_order.order_line" t-as="line">
                                <tr>
-                                 <td style="text-align:center">
+                                 <td style="text-align: center; vertical-align: middle;">
                                    <span t-esc="line.name"/>
                                  </td>
                                </tr>
@@ -402,25 +402,25 @@
                        </div>
                        <table style="width:100%">
                          <tr style="text-align:center; background:#D7DBDD">
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              Company:
                            </td>
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              Contact Person:
                            </td>
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              Email:
                            </td>
                          </tr>
 
                          <tr style="text-align:center">
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              <span t-if="o.freight_supplier_id.parent_id" t-esc="o.freight_supplier_id.parent_id.name"/>
                            </td>
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              <span t-if="o.freight_supplier_id" t-esc="o.freight_supplier_id.name"/>
                            </td>
-                           <td>
+                           <td style="text-align: center; vertical-align: middle;">
                              <span t-if="o.freight_supplier_id" t-esc="o.freight_supplier_id.email"/>
                            </td>
                          </tr>
@@ -454,19 +454,18 @@
 
                </div>
            </div>
-         
+
 
        </t>
     </template>
-    
+
     <template id="solupaper_logistica_report">
         <t t-call="web.html_container">
             <t t-set="data_report_margin_top" t-value="12"/>
             <t t-set="data_report_header_spacing" t-value="9"/>
-            <t t-set="data_report_dpi" t-value="110"/>
             <t t-foreach="docs" t-as="o">
-                <t t-call="solupaper.solupaper_logistica_report_document" t-lang="o.purchase_order..partner_id.lang"/>
+                <t t-call="solupaper.solupaper_logistica_report_document" t-lang="o.purchase_order.partner_id.lang"/>
             </t>
         </t>
-    </template>     
+    </template>
 </odoo>
