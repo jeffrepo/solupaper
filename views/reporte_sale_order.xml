@@ -38,11 +38,6 @@
                         <div class="clearfix"/>
 
                         <style>
-                            table, th, td {
-                                border: 1px solid black;
-                                vertical-align: middle;
-                            }
-
                             #signaturename {
                               text-align: left;
                               font-weight: bold;
@@ -58,7 +53,7 @@
                         </style>
                         <div class="derecha" style="float:right">
                             <center>
-                              <table style="margin: 0px auto;width:100%">
+                              <table class="table table-sm o_main_table mt-4">
                                   <tr>
                                       <td style="text-align:right;width:150px;text-align: center; vertical-align: middle;">Incoterm:</td>
                                       <td style="text-align:left;width:150px;text-align: center; vertical-align: middle;"><span t-esc="o.solupaper_incoterm_id.name"/></td>
@@ -91,10 +86,8 @@
                             </center>
                         </div>
                         <div class="izquierda" style="float:left;">
-                            <table style="margin: 0px auto;width:100%">
-                                <tr>
-                                    <td style="text-align:center; width:300px;text-align: center; vertical-align: middle;">Customer</td>
-                                </tr>
+                            <p style="color:#DC863F;"><strong>Customer</strong></p>
+                            <table class="table table-sm o_main_table mt-4">
                                 <tr>
                                     <td style="text-align:center;height:100px;text-align: center; vertical-align: middle;">
                                         <span t-field="o.partner_id.name"/><br/>
@@ -106,37 +99,40 @@
                         </div>
                         <div class="clearfix"/>
                         <div style="height:25px"/>
-                        <center><h4><strong>Proform Invoice</strong></h4></center>
+                        <center><h4 style="color:#DC863F;"><strong>Proform Invoice</strong></h4></center>
                         <br/>
                         <div class="tabla">
-                          <table style="margin: 0px auto;width:100%">
-                              <tr>
-                                  <td style="font-size:18px;text-align:center;text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Description</strong></td>
-                                  <td style="font-size:18px;text-align:center;text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Quantity TM</strong></td>
-                                  <td style="font-size:18px;text-align:center;text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Price/TM</strong></td>
-                                  <td style="font-size:18px;text-align:center;text-align: center; vertical-align: middle;background-color:  #d9d9d9;"><strong>Full Value</strong></td>
-                              </tr>
-
-                              <t t-foreach="o.order_line" t-as="line">
+                          <table class="table table-sm o_main_table mt-4">
+                              <thead style="display: table-row-group">
                                   <tr>
-                                      <td style="text-align: center; vertical-align: middle;"><span t-field="line.name"/></td>
-                                      <td style="text-align:center;"><span t-field="line.product_uom_qty"/></td>
-                                      <td style="text-align:center;"><span t-field="line.price_unit"/></td>
-                                      <td style="text-align:center;"><span t-field="line.price_total"/></td>
+                                      <th style="color:#DC863F;">Description</th>
+                                      <th style="color:#DC863F;">Quantity TM</th>
+                                      <th style="color:#DC863F;">Price/TM</th>
+                                      <th style="color:#DC863F;">Full Value</th>
                                   </tr>
-                              </t>
-                              <tr>
-                                  <td></td>
-                                  <td></td>
-                                  <td style="text-align:center;">Discount</td>
-                                  <td style="text-align:center;"><span t-field="o.descuento"/>%</td>
-                              </tr>
-                              <tr>
-                                  <td></td>
-                                  <td></td>
-                                  <td style="text-align:center;">Total</td>
-                                  <td style="text-align:center;"><span t-field="o.amount_total"/></td>
-                              </tr>
+                              </thead>
+                              <tbody class="sale_tbody">
+                                  <t t-foreach="o.order_line" t-as="line">
+                                      <tr>
+                                          <td style="text-align: center; vertical-align: middle;"><span t-field="line.name"/></td>
+                                          <td style="text-align:center;"><span t-field="line.product_uom_qty"/></td>
+                                          <td style="text-align:center;"><span t-field="line.price_unit"/></td>
+                                          <td style="text-align:center;"><span t-field="line.price_total"/></td>
+                                      </tr>
+                                  </t>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td style="text-align:center;">Discount</td>
+                                      <td style="text-align:center;"><span t-field="o.descuento"/>%</td>
+                                  </tr>
+                                  <tr>
+                                      <td></td>
+                                      <td></td>
+                                      <td style="text-align:center;">Total</td>
+                                      <td style="text-align:center;"><span t-field="o.amount_total"/></td>
+                                  </tr>
+                              </tbody>
                           </table>
                         </div>
 
