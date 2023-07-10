@@ -6,7 +6,6 @@
          <t t-set="data_report_margin_top" t-value="12"/>
          <t t-set="data_report_header_spacing" t-value="4"/>
          <t t-set="o" t-value="o.with_context(lang=o.proforma_id.partner_id.lang)" />
-
            <div class="article">
              <div class="page">
 
@@ -92,7 +91,15 @@
                <div style="border: 1px solid black; height:auto; width:100%">
                  <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">CONSIGNEE</p>
                  <br/>
-                 <p style="text-align:center"><span t-if="o.proforma_id" t-esc="o.proforma_id.partner_id.name"/></p>
+                 <p style="text-align:center">
+                   <span t-if="o.proforma_id" t-esc="o.proforma_id.partner_id.name"/><br/>
+                   <span t-if="o.proforma_id" t-esc="o.proforma_id.partner_id.street"/><br/>
+                   <t t-if="o.proforma_id.partner_id.street2">
+                      <span t-esc="o.proforma_id.partner_id.street2"/><br/>
+                   </t>
+                   <span t-if="o.proforma_id" t-esc="o.proforma_id.partner_id.city"/><span t-if="o.proforma_id.partner_id.state_id" t-esc="o.proforma_id.partner_id.state_id.name"/><br/>
+                   RFC: <span t-if="o.proforma_id.partner_id.vat" t-esc="o.proforma_id.partner_id.vat"/>
+                 </p>
                </div>
 
                <br/><br/>
@@ -101,7 +108,16 @@
                  <div style="float:left;width:50%;border: 1px solid black; display: table-cell; vertical-align: top">
                    <p style="text-align:center; background:#E5E7E9; border: 1px solid black;">NOTIFY</p>
                    <br/>
-                   <p style="text-align:center"><span t-esc="o.proforma_id.partner_id.name"/></p>
+                   <p style="text-align:center">
+                     <span t-esc="o.proforma_id.partner_id.name"/><br/>
+                     <span t-if="o.proforma_id.partner_id.street" t-esc="o.proforma_id.partner_id.street"/><br/>
+                     <t t-if="">
+                       <span t-if="o.proforma_id.partner_id.street2" t-esc="o.proforma_id.partner_id.street2"/><br/>
+                     </t>
+                     <span t-if="o.proforma_id.partner_id.city" t-esc="o.proforma_id.partner_id.city"/>, <span t-if="o.proforma_id.partner_id.state_id" t-esc="o.proforma_id.partner_id.state_id.name"/><br/>
+                     <span t-if="o.proforma_id.partner_id.country_id" t-esc="o.proforma_id.partner_id.country_id.name"/><br/>
+                     RFC: <span t-if="o.proforma_id.partner_id.vat" t-esc="o.proforma_id.partner_id.vat"/><br/>
+                   </p>
                  </div>
 
                  <div style="float:right;width:50%;border:1px solid black; display: table-cell; vertical-align: top">
@@ -181,21 +197,21 @@
                  </tr>
 
                  <tr height="20px">
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
+                   <td/>
+                   <td/>
+                   <td/>
+                   <td/>
+                   <td/>
+                   <td/>
                  </tr>
 
                  <tr height="20px">
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
-                   <td></td>
+                   <td/>
+                   <td/>
+                   <td/>
+                   <td/>
+                   <td/>
+                   <td/>
                  </tr>
 
                </table>

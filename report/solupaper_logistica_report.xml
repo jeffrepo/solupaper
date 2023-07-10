@@ -179,7 +179,7 @@
                        </div>
                      </div>
                      <br/>
-                     <div class="div_box_header_standard" >
+                     <div class="div_box_header_standard">
                        <div class="divs_mitad_espacio_left" style="background:#D7DBDD">
                          <br/>
                          <p style="text-align:center">Our Purchase Order:</p>
@@ -197,7 +197,7 @@
 
                    <div class="div_right_box">
 
-                     <div class="div_titulo_1"></div>
+                     <div class="div_titulo_1"/>
                      <div class="div_cajita">
                        <p style="text-align:center; background:#D7DBDD; border: 1px solid black">SHIPPER</p>
                        <br/>
@@ -216,7 +216,7 @@
                  </div>
 
 
-                 <div class="div_body_general" >
+                 <div class="div_body_general">
 
                    <div style="display:flex; align-items: stretch; border: 1px solid black">
                      <div style="width:50%; height:100%; border:1px solid black; float:left; box-sizing: border-box; ">
@@ -325,9 +325,13 @@
                             <t t-if="o.purchase_order.partner_id.parent_id">
                               <span t-if="o.purchase_order.partner_id.parent_id.name" t-esc="o.purchase_order.partner_id.parent_id.name"><br/></span>
                               <span t-if="o.purchase_order.partner_id.parent_id.street" t-esc="o.purchase_order.partner_id.parent_id.street"/>
+                              <t t-if="o.purchase_order.partner_id.parent_id.street2">
+                                <span t-esc="o.purchase_order.partner_id.parent_id.street2"/><br/>
+                              </t>
                               <span t-if="o.purchase_order.partner_id.parent_id.city" t-esc="o.purchase_order.partner_id.parent_id.city"><br/></span>
                               <span t-if="o.purchase_order.partner_id.parent_id.state_id" t-esc="o.purchase_order.partner_id.parent_id.country_id.name"><br/></span>
                               <span t-if="o.purchase_order.partner_id.parent_id.phone" t-esc="o.purchase_order.partner_id.parent_id.phone"><br/></span>
+                              RFC: <span t-if="o.purchase_order.partner_id.parent_id.vat" t-esc="o.purchase_order.partner_id.parent_id.vat"/>
                             </t>
                           </t>
                          </t>
@@ -344,6 +348,7 @@
                           <span t-if="o.purchase_order.partner_id.city" t-esc="o.purchase_order.partner_id.city"><br/></span>
                           <span t-if="o.purchase_order.partner_id.state_id" t-esc="o.purchase_order.partner_id.country_id.name"><br/></span>
                           <span t-if="o.purchase_order.partner_id.phone" t-esc="o.purchase_order.partner_id.phone"><br/></span>
+                          <br/>RFC: <span t-if="o.purchase_order.partner_id.vat" t-esc="o.purchase_order.partner_id.vat"/>
                          </t>
                        </p>
                      </div>
@@ -387,9 +392,13 @@
                        <p style="text-align:center">
                          <span t-if="o.proforma_id.partner_id.name" t-esc="o.proforma_id.partner_id.name"/><br/>
                          <span t-if="o.proforma_id.partner_id.street" t-esc="o.proforma_id.partner_id.street"/>
+                         <t t-if="o.proforma_id.partner_id.street2">
+                           <span t-esc="o.proforma_id.partner_id.street2"/><br/>
+                         </t>
                          <span t-if="o.proforma_id.partner_id.city" t-esc="o.proforma_id.partner_id.city"/><br/>
                          <span t-if="o.proforma_id.partner_id.state_id" t-esc="o.proforma_id.partner_id.country_id.name"/><br/>
                          <span t-if="o.proforma_id.partner_id.phone" t-esc="o.proforma_id.partner_id.phone"/><br/>
+                         RFC: <span t-if="o.proforma_id.partner_id.vat" t-esc="o.proforma_id.partner_id.vat"/>
                        </p>
                      </div>
 
@@ -454,7 +463,6 @@
 
                </div>
            </div>
-
 
        </t>
     </template>

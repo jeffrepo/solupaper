@@ -24,10 +24,15 @@
                          <u>3. Addressee</u> <br/>
                          <p style="text-align:center">
                            <span t-if="o.proforma_id.partner_id.name" t-esc="o.proforma_id.partner_id.name"/><br/>
+
                            <span t-if="o.proforma_id.partner_id.street" t-esc="o.proforma_id.partner_id.street"/>
+                           <t t-if="o.proforma_id.partner_id.street2">
+                             <span t-esc="o.proforma_id.partner_id.street2"/><br/>
+                           </t>
                            <span t-if="o.proforma_id.partner_id.city" t-esc="o.proforma_id.partner_id.city"/><br/>
                            <span t-if="o.proforma_id.partner_id.state_id" t-esc="o.proforma_id.partner_id.country_id.name"/><br/>
                            <span t-if="o.proforma_id.partner_id.phone" t-esc="o.proforma_id.partner_id.phone"/><br/>
+                           RFC: <span t-if="o.proforma_id.partner_id.vat" t-esc="o.proforma_id.partner_id.vat"/>
                          </p>
                          <br/>
                        </div>
