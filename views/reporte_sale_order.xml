@@ -92,7 +92,8 @@
                                     <td style="text-align:center;height:100px;text-align: center; vertical-align: middle;">
                                         <span t-field="o.partner_id.name"/><br/>
                                         <span t-field="o.partner_id.street"/> <br/> <span t-field="o.partner_id.street2"/><br/>
-                                        <span t-field="o.partner_id.vat"/><br/>
+                                        <span t-field="o.partner_id.city"/>, <span t-field="o.partner_id.state_id.name"/>, <span t-field="o.partner_id.country_id.name"/>, C.P. <span t-field="o.partner_id.zip"/><br/>
+                                        RFC: <span t-field="o.partner_id.vat"/><br/>
                                     </td>
                                 </tr>
                             </table>
