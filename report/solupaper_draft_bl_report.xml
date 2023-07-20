@@ -114,8 +114,7 @@
                      <t t-if="">
                        <span t-if="o.proforma_id.partner_id.street2" t-esc="o.proforma_id.partner_id.street2"/><br/>
                      </t>
-                     <span t-if="o.proforma_id.partner_id.city" t-esc="o.proforma_id.partner_id.city"/>, <span t-if="o.proforma_id.partner_id.state_id" t-esc="o.proforma_id.partner_id.state_id.name"/><br/>
-                     <span t-if="o.proforma_id.partner_id.country_id" t-esc="o.proforma_id.partner_id.country_id.name"/><br/>
+                     <span t-esc="o.proforma_id.partner_id.city"/>, <span t-esc="o.proforma_id.partner_id.state_id.name"/>,<span t-esc="o.proforma_id.partner_id.country_id.name"/>, C.P. <span t-esc="o.proforma_id.partner_id.zip"/><br/>
                      RFC: <span t-if="o.proforma_id.partner_id.vat" t-esc="o.proforma_id.partner_id.vat"/><br/>
                    </p>
                  </div>
