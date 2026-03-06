@@ -16,7 +16,7 @@
     <record id="action_customer_solupaper_logistica" model="ir.actions.act_window">
       <field name="name">Solupaper logistica</field>
       <field name="res_model">solupaper.logistica</field>
-      <field name="view_mode">tree,kanban,form</field>
+      <field name="view_mode">list,kanban,form</field>
       <field name="search_view_id" ref=""/>
       <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">
@@ -38,7 +38,7 @@
         <field name="name">solupaper.logistica.tree</field>
         <field name="model">solupaper.logistica</field>
         <field name="arch" type="xml">
-            <tree string="Logistica">
+            <list string="Logistica">
                 <field name="purchase_order" />
                 <field name="proforma_id" />
                 <field name="fecha_logistica" />
@@ -46,7 +46,7 @@
                 <field name="quantity_containers" />
                 <field name="type_container" />
                 <field name="days_free" />
-            </tree>
+            </list>
         </field>
     </record>
     
