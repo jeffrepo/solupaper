@@ -26,9 +26,9 @@ class PurchaseOrder(models.Model):
                             'product_qty': line.product_uom_qty,
                             'price_unit': 1,
                             'price_tax': 1,
-                            'taxes_id': [(6, 0, taxes.ids)],
+                            #'taxes_id': [(6, 0, taxes.ids)],
                             'date_planned': purchase.date_order,
-                            'product_uom': line.product_uom.id
+                            #'product_uom': line.product_uom.id
                         })
 
                         po_lines.append(po_line)
